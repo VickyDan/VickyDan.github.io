@@ -40,7 +40,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">坚持每天记录学习、生活</a>
+          <a href="/" id="subtitle">努力让自己变得优秀</a>
         </h2>
       
     </div>
@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.vickydan.com"></form>
@@ -67,6 +67,157 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-三级网络技术备考笔记知识点整理-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/" class="article-date">
+  <time datetime="2017-02-28T10:38:29.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/三级网络技术备考笔记知识点整理-4/">三级网络技术备考笔记知识点整理(4)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、分组转发（在互联网中路由器转发IP地址分组的物理传输过程与数据报转发机制）<br>  1、分类：直接转发、间接转发<br>  2、直接转发：源主机与目的主机在同一个网络<br>  3、间接转发：源主机与目的主机不在同一个网络<br>二、路由选择算法<br>  1、主要参数：<br>   （1）跳数（传输过程中经过路由器的个数）；（2）带宽（链路的传播速度）；（3）延时；（4）负载（单位时间内路由器或线路的通信量）；（5）可靠性（传输过程中的误码率）；（6）开销（传输过程中的耗费）<br>  2、理想的路由选择算法的特点：（1）正确、稳定、公正；（2）尽量简单；（3）必须能够适应网络拓扑和通信量的变化；（4）最佳的（以最低的开销转发分组）<br>  3、表驱动的路由选择算法：<br>    （1）静态路由选择算法：简单且开销较小，但不能及时适应网络状态的变化。其中路由器为静态路由表，由人工方式创建，无法自动更新<br>    （2）动态路由选择算法：能较的适应网络状态的变化，但实现较复杂，开销也较大。器路由表为动态路由表。<br>三、自治系统（AS）<br>  1、特点：有权决定本自治系统中具体使用那种路由协议，核心是路由寻址的“自治”，其表现为：自治系统内部的路由器了解内部网络的全部路由信息并能够通过一条路径将发送到其他自治系统的分组转发本系统的主干道上；自治系统内部的路由器要向主干路由器报告内部路由信息<br>  2、路由选择协议的分类：内部网关协议（IGP）和外部网关协议（EGP）<br>  3、内部网关协议（IGP）是自治系统内部使用的路由选择协议，主要有：<br>    （1）路由信息协议（RIP）<br>    （2）开放最短路径优先（OSPF）协议<br>         A、使用分布式链路状态；<br>         B、要求路由器发送的信息是本路由器与哪些路由器相邻以及状态信息的度量（费用、距离、开销、延时等）；<br>         C、要求当链路状态发生变化的时候用洪泛法向所有路由器发送此信息；<br>         D、所有的路由器最终都能建立一个链路状态数据库，实际上是全网的拓扑结构图，并且在全网范围内是保持一致的；<br>         E、将自治系统划分成多个更小的范围叫做区域，每个区域有一个32位的标识符（点分十进制），在一个区域的路由器不能超过200个<br>  4、外部网关协议（EGP）是在个自治系统之间使用的路由选择协议，主要有边界网关协议（BGP），其四种分组为：open(打开分组，用来与相邻的BGP发言人建立连接)，keepalive（保活分组，上一状态为open，用来确认打开报文，以及周期性地证实相邻边界路由器的存在），update（更新分组，核心，发送某一路由的的信息，以及列出要撤销的多条路由），notification（通知分组，发送检测到的差错）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cizpgj11a0004ropbxwten7en" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java相关的基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/java相关的基础知识/" class="article-date">
+  <time datetime="2017-02-28T08:48:22.307Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/java相关的基础知识/">java相关的基础知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于java与C++的不同：<br> 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO<br> java运行机制；虚拟机；代码安全性检测，垃圾收集机制<br>javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有main方法，必须嵌入到html文件中</p>
+<p> 关于java的工具：<br> 1、javac 编译<br> 2、java  运行<br> 3、javaw 运行图形界面程序<br> 4、appletViewer 运行applet程序<br> 5、jar 打包工具<br>    （1）编译 javac A.java<br>    （2）打包 jar cvfm A.jar A.man A.calss(c表示创建，v表示显示详情，f表示指定文件名，m表示生成清单文件，如A.man,可任意命名常见的是MANIFEST.MF)<br>    （3）运行 java -jar A.jar<br> 6、javadoc 生成文档<br>      javadoc -d 目录名 xxx.java<br> 7、javap查看类信息(javap 类名)及反汇编（java -c 类名）</p>
+<p> 关于输入输出<br>  1、文本界面：输入使用Scanner类，输出使用out(输入也可以使用in:System.in.read(),早期的JDK采用)<br>  2、图形界面输入输出：<br>      使用文本框对象（TextField）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/02/28/java相关的基础知识/" data-id="cizpgj0zt0000ropb9vv4e43i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-给开学第一周做个总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/27/给开学第一周做个总结/" class="article-date">
+  <time datetime="2017-02-27T11:41:38.000Z" itemprop="datePublished">2017-02-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/27/给开学第一周做个总结/">随便说说</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cizpgj12f0007ropb1ywwyb0f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-三级网络技术备考笔记知识点整理-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/26/三级网络技术备考笔记知识点整理-3/" class="article-date">
+  <time datetime="2017-02-26T12:55:48.000Z" itemprop="datePublished">2017-02-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/26/三级网络技术备考笔记知识点整理-3/">三级网络技术备考笔记知识点整理(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h1>第三章</h1><br>一、标准分类的IP地址<br>　１、定义：由网络好和主机号组成，长度为32位，用总分十进制表示。常用A、B、C类IP地址采用包括“网络号+主机号”的两级的层次结构(RFC1812)，其中：A类地址，网络号长度为7位，允许分配A类地址的网络只有128个；B类地址，网络号长度为14位，允许分配B类地址的网络号16384个。<br>　２、关于A类地址：网络号第一位为0，其余7位可分配，但网络号为0和127的留作特殊用途，网络号位10的用作专用地址<br>  3、关于B类地址：网络号前两位为10，可分配网络号长度为14<br>  4、关于C类地址：网络号前三位为110，可分配网络号长度为21<br>  5、特殊地址形式：<br>   A、直接广播地址：主机号全为1的地址，用来使路由器将一个分组以广播方式发送给特定网络上的所有主机<br>   B、受限广播地址：32位全为1的地址（255.255.255.255），用来将一个分组以广播方式发送给本网络的所有主机，路由器则阻挡该分组通过，将广播功能限制在本网络内部<br>   C、“这个网络上的特定主机”地址：<br>   D、回送地址：127.0.0.0，用于网络软件测试和本地进程间通信<br>     TCP/IP协议规定规定，含网络号为127的分组不能出现在任何网络上。主机和路由器不能为该地址广播任何寻址信息。<p style="color: red">“Ping”应用程序可以发送一个回送地址作为目的地址的分组，以测试IP软件能否接受和发送分组。</p>一个进程可以使用回送地址来发送一个分组给本机的另一个进程，用来测试本地进程之间的通信。<br>二、划分子网的IP地址<br>  1、定义：在标准的IP地址的基础上，增加子网号的三级地址结构，即：“网络号-子网号-主机号”的三级结构<br>  2、子网的概念：允许将网络划分成多个部分供内部使用，但对外部来说仍像一个网络一样。<br>  3、划分子网技术的要点：<br>   （1）三级层次的网络结构：net ID－Subnet ID——host ID<br>   （2）同一个子网中的子网号必须相同<br>   （3）可用于A、B或C类的任意一类的IP地址<br>   （4）子网间的距离必须很近<br>   （5）分配子网是一个单位内部的事，不需要向ICANN申请和改变任何外部的数据库<br>   （6）在Internet文献中，一个子网也称作一个IP网络或一个网络<br>三、构成超网的无类域间路由(CIDR)技术<br>  1、出现原因：希望解决Internet扩展中存在的两大问题（地址有效利用率问题和路由器的工作效率问题），将现有的IP地址合并成较大的具有更多主机地址的路由域<br>  2、技术特点：<br>   （1）用“网络前缀”代替“网络号+子网号”，形成新的无分类的二级地址结果，即地址表示为&lt;网络前缀，主机号&gt;<br>   （2）CIDR将网络前缀相同的连续的IP地址组成一个“CIDR地址块”<p></p>
+<p>四、网络地址转换（NAT）技术：为每个公司分配一个或少量的IP地址，用于传输Internet流量。在公司内部的每台主机上分配一个不能在Internet上使用的保留的专用IP地址，用于公司内部网络的通信，如需访问外部Internet主机，必须运行网络地址转换（NAT）的主机或路由器将内部专用IP地址转换成全局IP地址。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/02/26/三级网络技术备考笔记知识点整理-3/" data-id="cizpgj1100003ropbu1dff7zn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-三级网络技术备考笔记知识点整理-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -95,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/25/三级网络技术备考笔记知识点整理-2/" data-id="cizl9rmbj0002b4pb2zm061ai" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/02/25/三级网络技术备考笔记知识点整理-2/" data-id="cizpgj10q0002ropbpq16ex8y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/24/三级网络技术备考笔记知识点整理-1/" data-id="cizl9rmao0000b4pb0g7lbvpo" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/02/24/三级网络技术备考笔记知识点整理-1/" data-id="cizpgj10d0001ropbmjoxe1ra" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,9 +293,9 @@
 
 
   
-    <article id="post-给2017上半年定三个小目标" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-给2017上半年定几个小目标" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/23/给2017上半年定三个小目标/" class="article-date">
+    <a href="/2017/02/23/给2017上半年定几个小目标/" class="article-date">
   <time datetime="2017-02-23T14:59:01.000Z" itemprop="datePublished">2017-02-23</time>
 </a>
     
@@ -156,7 +307,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/给2017上半年定三个小目标/">给2017上半年定几个小目标</a>
+      <a class="article-title" href="/2017/02/23/给2017上半年定几个小目标/">给2017上半年定几个小目标</a>
     </h1>
   
 
@@ -168,15 +319,15 @@
 <ol>
 <li>作为学生学习当然是第一要务（虽然之前有两三个学期过得很随意），因此要求自己从这个学期开始认真听课，不在课堂上被手机控制支配    </li>
 <li>通过计算机等级考试三级网络技术</li>
-<li>认真学习中国大学mooc上的浙大陈越教授开设的数据结构课程，并争取拿到90+的成绩</li>
-<li>通过Node.js+SpringMVC+MyBatis实现个人博客网站的搭建，实现博客所需的功能</li>
+<li>认真学习中国大学mooc上的浙大陈越教授开设的数据结构课程以及北大唐大仕老师开设的java程序设计课程，并争取拿到90+的成绩</li>
+<li>通过jsp+SpringMVC+MyBatis实现个人博客网站的搭建，实现博客所需的功能</li>
 <li>坚持每天写一篇博文<br>失败是成功之母，坚持不懈才是让我们从失败走向成功的桥梁。一步步养成好习惯，让自己成为更优秀的人。</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/23/给2017上半年定三个小目标/" data-id="cizl9rmbu0003b4pbitxzf2mk" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/02/23/给2017上半年定几个小目标/" data-id="cizpgj1200006ropbo30euviw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/22/婧雪蔷薇杂记集的第一步/" data-id="cizl9rmb50001b4pb9ren9fj5" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/02/22/婧雪蔷薇杂记集的第一步/" data-id="cizpgj11n0005ropbgaz92p6m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,24 +399,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/">三级网络技术备考笔记知识点整理(4)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/java相关的基础知识/">java相关的基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/给开学第一周做个总结/">随便说说</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/三级网络技术备考笔记知识点整理-3/">三级网络技术备考笔记知识点整理(3)</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/25/三级网络技术备考笔记知识点整理-2/">三级网络技术备考笔记知识点整理(2)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/三级网络技术备考笔记知识点整理-1/">三级网络技术备考笔记知识点整理(1)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/23/给2017上半年定三个小目标/">给2017上半年定几个小目标</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/22/婧雪蔷薇杂记集的第一步/">婧雪蔷薇杂记集的第一步</a>
           </li>
         
       </ul>
@@ -281,7 +436,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 婧雪蔷薇<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

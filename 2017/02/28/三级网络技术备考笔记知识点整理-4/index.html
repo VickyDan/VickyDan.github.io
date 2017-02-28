@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>三级网络技术备考笔记知识点整理(4) | 婧雪蔷薇杂记集</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、分组转发（在互联网中路由器转发IP地址分组的物理传输过程与数据报转发机制）  1、分类：直接转发、间接转发  2、直接转发：源主机与目的主机在同一个网络  3、间接转发：源主机与目的主机不在同一个网络二、路由选择算法  1、主要参数：   （1）跳数（传输过程中经过路由器的个数）；（2）带宽（链路的传播速度）；（3）延时；（4）负载（单位时间内路由器或线路的通信量）；（5）可靠性（传输过程中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三级网络技术备考笔记知识点整理(4)">
+<meta property="og:url" content="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/index.html">
+<meta property="og:site_name" content="婧雪蔷薇杂记集">
+<meta property="og:description" content="一、分组转发（在互联网中路由器转发IP地址分组的物理传输过程与数据报转发机制）  1、分类：直接转发、间接转发  2、直接转发：源主机与目的主机在同一个网络  3、间接转发：源主机与目的主机不在同一个网络二、路由选择算法  1、主要参数：   （1）跳数（传输过程中经过路由器的个数）；（2）带宽（链路的传播速度）；（3）延时；（4）负载（单位时间内路由器或线路的通信量）；（5）可靠性（传输过程中的">
+<meta property="og:updated_time" content="2017-02-28T11:30:23.316Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三级网络技术备考笔记知识点整理(4)">
+<meta name="twitter:description" content="一、分组转发（在互联网中路由器转发IP地址分组的物理传输过程与数据报转发机制）  1、分类：直接转发、间接转发  2、直接转发：源主机与目的主机在同一个网络  3、间接转发：源主机与目的主机不在同一个网络二、路由选择算法  1、主要参数：   （1）跳数（传输过程中经过路由器的个数）；（2）带宽（链路的传播速度）；（3）延时；（4）负载（单位时间内路由器或线路的通信量）；（5）可靠性（传输过程中的">
+  
+    <link rel="alternate" href="/atom.xml" title="婧雪蔷薇杂记集" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">婧雪蔷薇杂记集</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">努力让自己变得优秀</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.vickydan.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-三级网络技术备考笔记知识点整理-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/" class="article-date">
+  <time datetime="2017-02-28T10:38:29.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      三级网络技术备考笔记知识点整理(4)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、分组转发（在互联网中路由器转发IP地址分组的物理传输过程与数据报转发机制）<br>  1、分类：直接转发、间接转发<br>  2、直接转发：源主机与目的主机在同一个网络<br>  3、间接转发：源主机与目的主机不在同一个网络<br>二、路由选择算法<br>  1、主要参数：<br>   （1）跳数（传输过程中经过路由器的个数）；（2）带宽（链路的传播速度）；（3）延时；（4）负载（单位时间内路由器或线路的通信量）；（5）可靠性（传输过程中的误码率）；（6）开销（传输过程中的耗费）<br>  2、理想的路由选择算法的特点：（1）正确、稳定、公正；（2）尽量简单；（3）必须能够适应网络拓扑和通信量的变化；（4）最佳的（以最低的开销转发分组）<br>  3、表驱动的路由选择算法：<br>    （1）静态路由选择算法：简单且开销较小，但不能及时适应网络状态的变化。其中路由器为静态路由表，由人工方式创建，无法自动更新<br>    （2）动态路由选择算法：能较的适应网络状态的变化，但实现较复杂，开销也较大。器路由表为动态路由表。<br>三、自治系统（AS）<br>  1、特点：有权决定本自治系统中具体使用那种路由协议，核心是路由寻址的“自治”，其表现为：自治系统内部的路由器了解内部网络的全部路由信息并能够通过一条路径将发送到其他自治系统的分组转发本系统的主干道上；自治系统内部的路由器要向主干路由器报告内部路由信息<br>  2、路由选择协议的分类：内部网关协议（IGP）和外部网关协议（EGP）<br>  3、内部网关协议（IGP）是自治系统内部使用的路由选择协议，主要有：<br>    （1）路由信息协议（RIP）<br>    （2）开放最短路径优先（OSPF）协议<br>         A、使用分布式链路状态；<br>         B、要求路由器发送的信息是本路由器与哪些路由器相邻以及状态信息的度量（费用、距离、开销、延时等）；<br>         C、要求当链路状态发生变化的时候用洪泛法向所有路由器发送此信息；<br>         D、所有的路由器最终都能建立一个链路状态数据库，实际上是全网的拓扑结构图，并且在全网范围内是保持一致的；<br>         E、将自治系统划分成多个更小的范围叫做区域，每个区域有一个32位的标识符（点分十进制），在一个区域的路由器不能超过200个<br>  4、外部网关协议（EGP）是在个自治系统之间使用的路由选择协议，主要有边界网关协议（BGP），其四种分组为：open(打开分组，用来与相邻的BGP发言人建立连接)，keepalive（保活分组，上一状态为open，用来确认打开报文，以及周期性地证实相邻边界路由器的存在），update（更新分组，核心，发送某一路由的的信息，以及列出要撤销的多条路由），notification（通知分组，发送检测到的差错）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cizpgj11a0004ropbxwten7en" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/28/java相关的基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java相关的基础知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/">三级网络技术备考笔记知识点整理(4)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/java相关的基础知识/">java相关的基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/给开学第一周做个总结/">随便说说</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/三级网络技术备考笔记知识点整理-3/">三级网络技术备考笔记知识点整理(3)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/三级网络技术备考笔记知识点整理-2/">三级网络技术备考笔记知识点整理(2)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 婧雪蔷薇<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
