@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>随便说说 | 婧雪蔷薇杂记集</title>
+  <title>每天几道编程题总结(1) | 婧雪蔷薇杂记集</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
+  <meta name="description" content="题1：汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！（来源：牛客网《剑指offer》）  解法一：该解法是做的时候首先想到的，每次左移一次都进行一个循环，时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随便说说">
-<meta property="og:url" content="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/index.html">
+<meta property="og:title" content="每天几道编程题总结(1)">
+<meta property="og:url" content="http://www.vickydan.com/2017/08/14/每天几道编程题总结-1/index.html">
 <meta property="og:site_name" content="婧雪蔷薇杂记集">
-<meta property="og:description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
-<meta property="og:updated_time" content="2017-02-27T11:55:46.505Z">
+<meta property="og:description" content="题1：汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！（来源：牛客网《剑指offer》）  解法一：该解法是做的时候首先想到的，每次左移一次都进行一个循环，时">
+<meta property="og:updated_time" content="2017-08-14T09:31:22.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随便说说">
-<meta name="twitter:description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
+<meta name="twitter:title" content="每天几道编程题总结(1)">
+<meta name="twitter:description" content="题1：汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！（来源：牛客网《剑指offer》）  解法一：该解法是做的时候首先想到的，每次左移一次都进行一个循环，时">
   
     <link rel="alternate" href="/atom.xml" title="婧雪蔷薇杂记集" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-给开学第一周做个总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-每天几道编程题总结-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/27/给开学第一周做个总结/" class="article-date">
-  <time datetime="2017-02-27T11:41:38.000Z" itemprop="datePublished">2017-02-27</time>
+    <a href="/2017/08/14/每天几道编程题总结-1/" class="article-date">
+  <time datetime="2017-08-14T09:02:59.000Z" itemprop="datePublished">2017-08-14</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      随便说说
+      每天几道编程题总结(1)
     </h1>
   
 
@@ -89,12 +89,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。</p>
+        <p>题1：汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！（来源：牛客网《剑指offer》）<br>  解法一：该解法是做的时候首先想到的，每次左移一次都进行一个循环，时间复杂度为O(N*N)<br>    public String LeftRotateString(String str, int n) {<br>        if (str.isEmpty())<br>            return “”;<br>        char[] cstr = str.toCharArray();<br>        for (int i = 0; i &lt; n % cstr.length; i++) {<br>            char temp = cstr[0];<br>            for (int j = 0; j &lt; cstr.length - 1; j++) {<br>                cstr[j] = cstr[j + 1];<br>            }<br>            cstr[cstr.length - 1] = temp;<br>        }<br>        String s = new String(cstr);<br>        return s;<br>    }<br> 解法二：”abcdefg”扩展为”abcdefgabcdefg”,截取n到n+len的部分即为所求字符串<br>    public String LeftRotateString(String str, int n) {<br>        int len = str.length();<br>        if (len == 0)<br>            return “”;<br>        n = n % len;<br>        str += str;<br>        return str.substring(n, len + n);<br>    }<br> 解法三：分割法，将待左移的字符串”abcdefg”分割成两部分，需要移到末尾的为一部分，剩余的为另一部分，如，n=2,第一部分为”ab”,第二部分为”cdefg”,将第二部分加上第一部分就得到循环左移2位后的结果”cdefgab”<br>    public String LeftRotateString(String str,int n) {<br>        int len=str.length();<br>        if(len==0)<br>                return “”;<br>           n=n%len;<br>           String n1=str.substring(0,n);<br>           String n2=str.substring(n,len);<br>        return n2+n1;<br>    }</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cj8ykddw8000cfkpbsyynbnlu" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/08/14/每天几道编程题总结-1/" data-id="cj8ykddwo000ffkpbvymrsnef" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -103,19 +103,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/02/28/java相关的基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/19/排序算法之快速排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          java相关的基础知识
+          排序算法之快速排序算法
         
       </div>
     </a>
   
   
-    <a href="/2017/02/26/三级网络技术备考笔记知识点整理-3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/06/17/tomcat错误集锦/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">三级网络技术备考笔记知识点整理(3)</div>
+      <div class="article-nav-title">tomcat错误集锦</div>
     </a>
   
 </nav>

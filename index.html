@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.vickydan.com"></form>
@@ -67,6 +67,199 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-排序算法之快速排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/19/排序算法之快速排序算法/" class="article-date">
+  <time datetime="2017-10-19T12:53:56.000Z" itemprop="datePublished">2017-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/19/排序算法之快速排序算法/">排序算法之快速排序算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#排序算法之快速排序算法（升序）</p>
+<p>##基本原理<br>  运用分治的思想；取数组的第一个数为关键数，根据这个数将数组分成两个部分，使得第一部分的数全部小于等于该数，而第二部分的数全部大于等于该数；重复上面的步骤直到排序完成。</p>
+<p>##实现步骤<br>待排序数组array的长度为N，令i=0,j=N-1;令key=array[0];</p>
+<ol>
+<li>判断array[j]是否小于key，若是，则交换array[j]与array[i]的值，否则j–,并重复步骤1;</li>
+<li>判断array[i]是否大于key，若是，则交换array[j]与array[i]的值，否则i++，并重复步骤2；</li>
+<li>判断i是否小于j，若是，则重复步骤1、2；否则，数组被分成0到i-1和i+1到N-1两个部分，并将两部分用同样的步骤进行处理，直到分成后的部分的长度小于等于1为止</li>
+</ol>
+<p>##代码实现</p>
+<pre><code>/**
+* 快速排序算法
+* &lt;p&gt;Description:对array数组中从下标为start到下标为end的部分的进行处理&lt;/p&gt; 
+* @param array 待排序数组
+* @param start 开始下标
+*@param end 结束下标
+*/
+public void QuickSort(int[] array,int start,int end){
+    if(start&gt;=end)//结束条件
+        return ;
+    int key=array[start];
+    int i=start;
+    int j=end;
+    while(i&lt;j){
+
+       while(j&gt;=0&amp;&amp;array[j]&gt;key){//从j向前查找小于key的数
+           j--;
+       }
+       if(j&gt;i){//交换array[i]与array[j]
+         int temp=array[i];
+         array[i]=array[j];
+         array[j]=temp;
+       }
+       while(i&lt;=end&amp;&amp;array[i]&lt;key){//从i开始向后查找大于key的数
+           i++;
+       }
+       if(i&lt;j){//交换array[i]与array[j]
+       int temp=array[i];
+           array[i]=array[j];
+           array[j]=temp;
+       }
+    }
+  QuickSort(array,start,i-1);//递归第一部分    
+  QuickSort(array,i+1,end);    //递归第二部分
+
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/10/19/排序算法之快速排序算法/" data-id="cj8ykddv00004fkpbwuxvbv1t" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-每天几道编程题总结-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/14/每天几道编程题总结-1/" class="article-date">
+  <time datetime="2017-08-14T09:02:59.000Z" itemprop="datePublished">2017-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/14/每天几道编程题总结-1/">每天几道编程题总结(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题1：汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！（来源：牛客网《剑指offer》）<br>  解法一：该解法是做的时候首先想到的，每次左移一次都进行一个循环，时间复杂度为O(N*N)<br>    public String LeftRotateString(String str, int n) {<br>        if (str.isEmpty())<br>            return “”;<br>        char[] cstr = str.toCharArray();<br>        for (int i = 0; i &lt; n % cstr.length; i++) {<br>            char temp = cstr[0];<br>            for (int j = 0; j &lt; cstr.length - 1; j++) {<br>                cstr[j] = cstr[j + 1];<br>            }<br>            cstr[cstr.length - 1] = temp;<br>        }<br>        String s = new String(cstr);<br>        return s;<br>    }<br> 解法二：”abcdefg”扩展为”abcdefgabcdefg”,截取n到n+len的部分即为所求字符串<br>    public String LeftRotateString(String str, int n) {<br>        int len = str.length();<br>        if (len == 0)<br>            return “”;<br>        n = n % len;<br>        str += str;<br>        return str.substring(n, len + n);<br>    }<br> 解法三：分割法，将待左移的字符串”abcdefg”分割成两部分，需要移到末尾的为一部分，剩余的为另一部分，如，n=2,第一部分为”ab”,第二部分为”cdefg”,将第二部分加上第一部分就得到循环左移2位后的结果”cdefgab”<br>    public String LeftRotateString(String str,int n) {<br>        int len=str.length();<br>        if(len==0)<br>                return “”;<br>           n=n%len;<br>           String n1=str.substring(0,n);<br>           String n2=str.substring(n,len);<br>        return n2+n1;<br>    }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/08/14/每天几道编程题总结-1/" data-id="cj8ykddwo000ffkpbvymrsnef" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tomcat错误集锦" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/17/tomcat错误集锦/" class="article-date">
+  <time datetime="2017-06-17T06:15:50.000Z" itemprop="datePublished">2017-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/17/tomcat错误集锦/">tomcat错误集锦</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/06/17/tomcat错误集锦/" data-id="cj8ykddu70000fkpbcoksw3n9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-三级网络技术备考知识点整理-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/08/三级网络技术备考知识点整理-7/" class="article-date">
+  <time datetime="2017-03-08T10:25:43.000Z" itemprop="datePublished">2017-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/08/三级网络技术备考知识点整理-7/">三级网络技术备考知识点整理(7)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、路由器工作原理<br> 1、基本功能<br>（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由<br> A、核心：下一跳路由器的IP地址（路由表）<br> B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权值愈小，路由愈佳。然后将最佳路由信息保存在一个路由表中。当网络拓扑发生变化时，路由选择协议会重新计算最佳路由，并更新路由表<br>（2）分组转发：按照路由选择所指出的路由将数据分组从源结点转发到目的结点<br> A、实现方法：接收到一个数据分组时，查看分组头中的目的IP地址的网络部分查询路由表。如果表中给出的是到达目的网络地址的下一跳路由器的IP地址，则按路由表给出的路径将数据分组转发到下一跳路由器，由下一跳路由器继续转发，直到将数据分组转发到目的端；如果目的网络与路由器的一个端口直接相连，那么对应于目的网络地址的路由表表项给出的是目的端口，这种情况下，路由器将数据分组直接发送给目的端口；如果路由表中既没有下一跳路由地址又没有目的端口时，将数据分组转发给缺省路由，由该路由所连的路由器继续转发到目的端，如果仍没有找到该分组的网络的路由信息，则将该分组丢弃。<br> 2、路由表<br>（1）基本结构：有目的网络地址及其所对应的目的端口或下一跳路由地址和缺省路由<br>（2）管理距离：衡量路由器中给定的路由信息源的“可信度”。管理距离越小，可信度越高。<br>（3）权值：由带宽、时延、负载、跳数、可靠性、滴答数、花费等决定，权值愈小，路由愈佳<br> eg:[110/22]——&gt;该条路由信息源的管理距离为110，权值为22<br>二、路由器的结构<br> 1、CPU：Motorola68030或Orion/R4600<br> 2、内存：分类有只读内存（ROM）、随机存储器（RAM）、非易失性随机存储器（NVRAM）、<br>   闪存（Flash）<br> 3、接口<br> 4、存储器<br>三、工作模式：用户模式、特权模式、设置模式、全局配置模式、其他配置模式、RXBOOT模式（维护模式）<br>四、路由器的基本操作与配置方法<br> 1、配置方式<br>（1）使用控制端口配置<br>（2）使用AUX端口连接一台modem，通过拨号远程配置路由器<br>（3）使用telnet远程登录到路由器上配置路由器<br>（4）使用TFTP服务，以拷贝配置文件、修改配置文件的方式配置路由器<br>（5）通过网络管理协议SNMP修改路由器配置文件的方式<br> 2、使用控制端口配置：与用控制端口配置交换机基本类似<br> 3、使用telnet命令远程登录到路由器上配置路由器<br>（1）必备条件：<br> A、作为模拟终端的计算机和路由器都必须连网，它们能够相互通信<br> B、计算机必须拥有访问路由器的权限<br> C、路由器必须预先配置好远程登录密码<br>（2）配置（只需配置远程登录密码即可）<br>   全局配置模式下：<br>   Router（config）#line vty 0 15<br>   Router(config-line)#password 7 222307<br>(3)具体步骤：在“运行”窗口输入“telnet &lt;路由器IP地址&gt;”<br> 4、使用TFTP服务配置路由器<br>（1）必备条件：在网络上配置一台计算机作为TFTP服务器，TFTP服务器上必须安装并运行TFTP Server软件<br>（2）操作步骤<br> A、拷贝配置文件到TFTP服务器：特权用户模式下，write或copy命名<br> B、从TFTP服务器拷贝配置文件到路由器<br>五、路由器的基本配置及公用命令<br> 1、基本配置<br>(1)配置路由器主机名：Router（config）#hostname <name><br>(2)配置超级用户口令（密码）：<br>  Router（config）#secret <password><br>  Router(config)#password <password><br>(3)设置系统时钟：Router#calendar set hh:mm:ss <1~31> MONTH <1993~2035><br> 2、公用命令<br>（1）退出命令：exit(逐级退出)；end（直接退出到特权用户模式）<br>（2）保存配置：<br>   Router#write memory//保存到路由器NVRAM中<br>   Router#write tftp//保存到TFTP服务器<br>（3）删除配置（全部）：Router＃write erase<br>（4）网络的基本测试命令<br> A、talnet<br> B、ping<br> C、trace<br> D、show<br>六、路由器的接口配置（在全局配置模式下，通过interface &lt;接口号进入接口配置模式）<br> 1、基本配置<br>（1）配置接口描述信息：Router(config-if)#description <string>(一般描述连接到哪儿)<br>（2）配置宽带信息：Router(config-if)#bandwidth 2500000(2.5Gbps)<br>（3）配置接口的IP地址：Router(config-if)#ip address <ip地址> &lt;子网掩码&gt;<br>（4）接口的开启与关闭：shutdown(关闭)、no shutdown(接口配置模式)<br> 2、局域网接口配置<br>（1）配置标准以太网接口（Ethernet，e）<br>（2）配置快速以太网接口(FastEthernet,f)<br>（3）配置千兆以太网接口（GigabitEthernet,g）<br> 3、广域网串口配置<br>（1）配置异步串行接口（Asyns,a,主要用于连接Modem设备，为用户提供拨号上网服务）<br>（2）配置高速同步串行接口（Serial，s,主要用于DDN专线、帧中继、卫星、微波等广域网连接）（PPP或HDLC）<br>（3）配置POS接口（链路层协议PPP和HDLC）<br> 4、loopback接口的配置（虚拟接口），主要设置IP address<br>七、静态路由配置（仅适合小型的，网络拓扑没有变化的局域网和采用点到点连接的网络互连环境）<br> 方法：全局配置模式下，ip route &lt;目的网络地址&gt;&lt;子网掩码&gt;&lt;下一跳路由器的IP地址&gt;<br>   删除：no ip route<br>八、动态路由协议的配置<br> 1、RIP的配置（限制最大跳数为15，不支持可变掩码）<br>（1）基本配置<br>   Router(config)#router rip//进入RIP路由协议的配置模式<br>   Router(config-route)#network &lt;目的地址&gt;<br>（2）RIP的高级配置<br> A、配置被动接口：在RIP路由配置模式下，使用“passive-interface”指定一个路由接口为被动接口；eg:Router(config-route)#passive-interface <strong>ethernet 0</strong>//接口号<br> B、配置路由过滤（distribute-list）：在指定的路由器接口上，过滤接收/发送的路由更新信息<br>   Router(config-route)#distribute-list 12 in ethernet 0<br> C、配置管理距离（distance）(1~255)：Router（config-route）#distance 50<br> D、定义邻居路由器(neighbor)：Router(config-route)#neighbor <ip地址><br> 2、OSPF动态路由协议的配置（区域ID为0或者0.0.0.0为骨干区域）<br>（1）基本配置<br> A、进入OSPF配置模式：Router(config)#router ospf &lt;进程号&gt;<br> B、用network命令定义参与OSPF的网络地址：<br>　　Router(config-route)#network ip &lt;子网号&gt; &lt;子网掩码的反码&gt; area &lt;区域号&gt;<br> C、定义某一特定范围子网的聚合：Router(config-route)#area &lt;区域号&gt; range &lt;子网地址&gt; &lt;子网掩码&gt;<br>（2）几个常用OSPF参数的配置<br> A、配置被动接口：passive-interface<br> B、配置路由过滤：distribute-list<br> C、配置管理距离：distance(默认为110)<br> D、配置引入外部路由到OSPF的参数<br>  a、引入外部路由的花费值：redistribute metric<br>  b、引入外部路由时缺省的标记：redistribute tag<br>  c、引入外部路由时缺省的外部路由类型：<br>  类型2：redistribute connected metric-type<br>九、路由器的DHCP功能及其配置<br> 1、动态地址分配：使用动态主机配置协议(DHCP)，由网络站点提出DHCP请求，从DHCP服务器上自动获取一个IP地址与缺省网关、域名、域名服务器等相关的TCP/IP属性的信息。在网络站点退出登录后，就将地址自动释放（动态分配的IP地址是一个临时的、不固定的地址）<br> 2、DHCP的工作原理<br> 采用客户机/服务器（C/S）工作模式<br> DHCP服务器的两个功能：（1）建立和分配IP地址池；(2)接收并处理DHCP客户端提出的DHCP请求（分配一个可用的IP地址，并将相应的信息反馈给客户。客户端系统关闭后自动收回IP地址）<br> DHCP客户端的功能：提交DHCP请求，请求DHCP服务器给它分配一个IP地址并接收和使用DHCP临时配给它的IP地址进行网络连接<br> DHCP协议允许网络上配置多台DHCP服务器。当DHCP客户端收到多个应答信息时，通常会挑选最先到达的信息；同时DHCP客户与它选中的DHCP服务器获取IP地址及其他的TCP／IP属性信息。<br> DHCP协议允许使用备份DHCP服务器的功能<br> 3、DHCP客户端从DHCP服务器申请一个IP地址的基本操作步骤：<br>  主机A       DHCPDISCOVER(boradcast）       DHCP Server<br>              DHCPOFFER(unicast)<br>              DHCPREQUEST(boradcast)<br>              DHCPACK(unicast)<br> 4、路由器作为DHCP服务器的配置<br>（1）配置IP地址池的名称，并进入DHCP　Pool配置模式<br>　　　Router(config)#ip dhcp pool <name><br>（2）配置IP地址的IP子网地址和子网掩码：<br>   Router(dhcp-config)#&lt;网络号&gt;[子网掩码]<br>   配置不参与动态分配的IP地址（除外地）<br>   Router(dhcp-config)#ip dhcp excluded-address low-address[high-address]<br>（3）配置IP地址池的缺省网关（网关地址最多可配置8个，但一般只需配一个）<br>   Router(dhcp-config)#default-router address[address1 … address7]<br>（4）配置IP地址池的域名系统（用于为DHCP客户指定一个域名和域名服务器）<br> A、配置IP地址池的域名：Router(dhcp-config)#domain-name <name><br> B、配置IP地址池的域名服务器的IP地址：<br>  Router(dhcp-config)#dns-server address[address1 … address7]<br>（5）配置IP地址池的地址租用时间（缺省为１天）<br>　Router(dhcp-config)#lease {days [hours] [munites]|infinite}//infinite为无限时间<br>（6）取消地址冲突记录日志<br>  Router(dhcp-config)#no ip dhcp onflict logging<br>十、路由器IP访问控制列表的功能及其配置<br> 1、访问控制列表：用于提供初级防火墙功能；告诉路由器哪些数据包可以接受，哪些需要拒绝；是一系列有网络管理员预先配置好的，允许和拒绝匹配规则的集合；其核心是根据特定规则进行数据包过滤，对网络进行安全控制，防止病毒包、扫描包、攻击包等通过路由器去攻击网络，保证网络的安全性<br> 2、IP访问控制列表功能简介<br>（1）主要功能：包过滤<br>（2）过滤准则：基于源地址、目的地址、各种协议和端口号的过滤准则<br>（3）分类：<br> A、标准访问控制列表：只能检查数据包的源地址，根据源网络、子网络或主机IP地址来决定对包的过滤；表号为1~99，扩展表号1300~1999<br> B、扩展访问控制列表：可以检查数据包的源地址、目的地址、指定的协议和端口号来对数据包进行过滤；表号为100~199，扩展表号2000~2699<br> 3、配置IP访问控制列表：一个连续列表，至少由一个“permit”和一个或多个“deny”语句组成；可以用名字或表号来标识和引用<br> （1）用access-list命令配置访问控制列表<br>  A、配置标准访问控制列表<br>  Router(config)#access-list <number> {permit|deny} &lt;源地址&gt; &lt;子网掩码的反码&gt;<br>  B、配置扩展访问控制列表<br>  Router(config)#access-list <number> {permit|deny} protocal source wildcard-mask destination wildcard-mask [operator] [operand]//operatar:操作符，“lt”(小于)，”gt”(大于)，”eq”(等于)，”neq”(不等于);operand:端口号<br>（2）ip access-list命令配置访问控制列表（配置标准和扩展的方法基本相同）<br>  A、进入标准(扩展)访问控制模式：<br>  Router(config)#ip access-list standard(extended) number(name)<br> B、标准(扩展)访问控制模式下：<br>  permit(deny) protocal source wildcard-mask distination wildcard-mask [operator][opercand]</number></number></name></name></ip地址></ip地址></string></1993~2035></1~31></password></password></name></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/" data-id="cj8ykddvr0007fkpbp5fc6g4x" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-三级网络技术备考笔记知识点整理-6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -95,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/06/三级网络技术备考笔记知识点整理-6/" data-id="cizz2gfyu0003lcpb6lxypfrd" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/03/06/三级网络技术备考笔记知识点整理-6/" data-id="cj8ykddwj000efkpbwwfc8yvi" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -132,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/02/三级网络技术备考知识点整理-5/" data-id="cizz2gfyc0002lcpb6ruo0dcs" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/03/02/三级网络技术备考知识点整理-5/" data-id="cj8ykddul0001fkpbvjcfz37h" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -169,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cizz2gfze0005lcpb1wt8jhpm" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cj8ykddvu0008fkpbe4cp3z2b" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -208,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/28/java相关的基础知识/" data-id="cizz2gfws0000lcpbnmlwm95f" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/02/28/java相关的基础知识/" data-id="cj8ykddus0002fkpbooa9zwgl" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -245,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cizz2gg020007lcpbx9m9rgxl" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cj8ykddw8000cfkpbsyynbnlu" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -283,162 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/26/三级网络技术备考笔记知识点整理-3/" data-id="cizz2gfz10004lcpbulc79379" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-三级网络技术备考笔记知识点整理-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/25/三级网络技术备考笔记知识点整理-2/" class="article-date">
-  <time datetime="2017-02-25T12:00:19.000Z" itemprop="datePublished">2017-02-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/三级网络技术备考笔记知识点整理-2/">三级网络技术备考笔记知识点整理(2)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h1>第二章</h1><br>一、基于网络的信息系统的结构包括：<br>  网络运行环境、网络系统以及基于网络系统的网络数据库系统、网络软件开发工具与网络应用系统，同时还应具有保证网络安全的网络安全系统和保证网络正常运行的网络管理系统<br>二、网络总体设计基本方法<br> 1、需完成的任务：网络建设总体目标、网络系统方案设计原则、网络系统总体设计、网络拓扑结构、网络设备选型、网络系统安全设计<br> 2、网络系统设计原则：实用性、开放性、可靠性、安全性、先进性与可靠性<br> 3、网络系统结构：分层；分为核心层、汇聚层、接入层三层；<br>  (1)核心层：A、技术标准：GE/10GE；B、核心设备：高性能交换路由器；C、由具有冗余链路的光纤连接核心路由器；D、连接方案：a、采用链路冗余的方法直接连接<br> 4、网络关键设备选型：<br>  (1) 基本原则：a、产品系列与厂商的选择：成熟的主流产品，且最好是同一个厂家的产品；b、网络的可扩展性考虑；c、网络技术先进性考虑；<br>  (2) 路由器选型：<br>   A、分类：从性能上，按路由器背板交换能力划分为：高端路由器(高端核心路由器)、中端路由器(企业级路由器)、低端路由器<br>     a、高端路由器：多个高速光端口。支持多协议标记交换（MPLS）协议等，背板交换能力大于40Gbps;<br>     b、中端路由器：在支持IP协议的同时，支持IPx、Vines等多种协议，并支持防火墙、QoS、安全与VPN策略；<br>     c、低端路由器：支持局域网、ADSL接入与PPP接入方式等协议<br>   B、关键技术指标：a.吞吐量；b.背板能力(决定吞吐量)；c.丢包率(超负荷工作指标之一；d.延时与延时抖动；e.突发处理能力；f.路由器容量；g.服务质量；h.网管能力；i.可靠性与可用性：设备冗余、热拔插组件、无障碍工作时间、内部时钟精确等<br>  (3) 交换机选型：<br>   A、分类<br>   B、技术指标：背板带宽、全双工总端口带宽(端口数X端口速率X2)、帧转发速率、延时、交换方式、模块式阔固定端口配置、支持VLAN能力等，模块式（机箱式）交换机的扩张能力<br>   C、配置选择：a、机架插槽数；b、扩展槽数；c、最大可堆叠数；d、端口你读与端口类型（全双工/单工）；e、最小/最大GE端口数；f、支持的网络协议类型；g、缓冲区大小；h、MAC地址表大小；i、可管理性；j、设置冗余。<br>  5、网络服务器选型：<br>   (1) 分类：文件服务器、数据库服务器、Internet/Intranet通用服务器、应用服务器<br>   (2)服务器性能：a、运算处理能力；b、磁盘存储能力；c、高可用性；d、可管理性；e、可扩展性<br>   (3)基本原则：根据不同的应用特点选择服务器、根据行业特点选择服务器、根据产品的成熟程度选择服务器<br>  6、网络系统安全设计的基本方法<p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/25/三级网络技术备考笔记知识点整理-2/" data-id="cizz2gg0r0008lcpb6vkgtdwo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-三级网络技术备考笔记知识点整理-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/24/三级网络技术备考笔记知识点整理-1/" class="article-date">
-  <time datetime="2017-02-24T13:36:26.000Z" itemprop="datePublished">2017-02-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/24/三级网络技术备考笔记知识点整理-1/">三级网络技术备考笔记知识点整理(1)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  一、广域网、城域网、局域网的主要技术特点<br>    1、局域网的技术特点：(1) 覆盖有限的地理范围，适用于机关、校园、工厂等有限范围内的计算机终端与各类信息处理设备联网的要求；(2) 提供高数据传输速率（10Mbps~100Gbps）、底误码率你的高质量数据传输环境；(3) 一般属于一个单位所有，易于建立、维护和扩展。<br>    2、城域网的技术特点：以光纤为传输介质；提供45Mbps~150Mpbs高传输速率；支持数据、语音、图形与视频等综合业务数据传输；可覆盖跨度在50km到100km的城市范围。实现高速宽带传输<br>    3、广域网的技术特点：在结构上分为负责数据处理的主计算机与终端和负责数据通信处理的通信控制处理设备与通信线路两个部分；主要研究的是远距离、宽带、高服务质量的核心交换技术<br>  二、 计算机网络结构的特点<br>    1、早期：从逻辑上分为资源子网和通信子网两部分；采用多种线路通信；<br>    2、目前：现代网络系统的基本单元为互联的局域网、城域网和广域网<br>  三、局域网技术的发展（以太网技术的发展）<br>    1、提高以太网的数据传输速率，但帧结构基本不变<br>    2、将大型局域网用网桥或路由器划分成多个互联的网络，促进了局域网互联技术的发展。网桥或路由器可以分割广播通信量和冲突域，使每个网络作为一个独立的小型局域网。通过减少每个网络内部结点数的方法，使每个网络性能得到改善，而每个子网的介质访问控制任采用CSMA/CD方法<br>    3、将共享介质方式改为交换方式，促使了交换式局域网技术的发展。交互式局域网的核心设备是局域网交换机，可在多个端口间建立多个并发连接<br>  四、宽带局域网<br>    1、定义：以宽帝光传输为网络为开放平台，以TCP／IP协议为基础，实现各种服务业务和智能业务，并与广域网、广播电视网、电话交换网、移动通信网互联互通的本地综合业务网<br>    络；提供高传输速率和服务质量QoS<br>    2、所带来变化：(1) 局域网、城域网和广域网在技术上的界限越来越模糊了；(2) 电信传输网与计算机网络技术的界限越来越模糊了；(3) 电信服务业务和Internet应用的界限越来越模糊了；(4)电信传输网、计算机网络与广播电视网的界限越来越模糊了(三网融合)。<br>    3、逻辑结构：“三个平台一个出口”–网络平台、业务平台、管理平台和城市宽带出口<br>    4、组建基本原理：保证网络的可运营性、可管理性、可盈利性和可扩展性<br>    5、关键技术：(1) 带宽管理：GE、10GE;(2) 服务质量QoS：资源预留(RSVP)、区分服务(Diff-Serv)、多协议标记交换(MPLS)；<br>    (3) 网络管理：带内网络管理、带外网络管理、同时使用带内、带外网络管理；(4)用户管理：(5) 多业务接入；(6) 统计与计费：利用网络管理协议(SNMP)的管理信息库(MIB)实现；(7) IP地址的分配和地址转换：目前使用公用IP地址和内部专用IP地址与网络地址转换NAT技术解解决；(8) 网络安全<br>  五、接入<br>    1、接入服务界定：<br>     (1) 我国将它作为“电信业务的第二类增值业务”；<br>     (2) 用户可以利用公共电话网或其他接入手段连接到业务结点，并通过该结点接入Internet；<br>     (3) Internet接入服务业务主要的两个应用为：a、为Internet内容提供者(ICP)提供Internet接入服务业务；b、为普通上网用户提供Internet接入服务业务；<br>     (4) 从网络层次来看，接入网属于物理层和数据链路层的问题<br>    2、接入网的接入方式：从技术上分为，数字用户线xDSL技术、光纤同轴电缆混合网HFC技术、光纤接入结接入技术、无线接入技术（无线局域网技术、无线城域网技术、无线Ad-hoc接入）、局域网接入技术</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/24/三级网络技术备考笔记知识点整理-1/" data-id="cizz2gfxn0001lcpb8fwsu0wz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-给2017上半年定几个小目标" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/23/给2017上半年定几个小目标/" class="article-date">
-  <time datetime="2017-02-23T14:59:01.000Z" itemprop="datePublished">2017-02-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/给2017上半年定几个小目标/">给2017上半年定几个小目标</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> 在今天这个2017已经过了六分之一，刚开学不到一周的时候给自己的2017上半学期定几个小目标：</p>
-<ol>
-<li>作为学生学习当然是第一要务（虽然之前有两三个学期过得很随意），因此要求自己从这个学期开始认真听课，不在课堂上被手机控制支配    </li>
-<li>通过计算机等级考试三级网络技术</li>
-<li>认真学习中国大学mooc上的浙大陈越教授开设的数据结构课程以及北大唐大仕老师开设的java程序设计课程，并争取拿到90+的成绩</li>
-<li>通过jsp+SpringMVC+MyBatis实现个人博客网站的搭建，实现博客所需的功能</li>
-<li>坚持每天写一篇博文<br>失败是成功之母，坚持不懈才是让我们从失败走向成功的桥梁。一步步养成好习惯，让自己成为更优秀的人。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/23/给2017上半年定几个小目标/" data-id="cizz2gg0x0009lcpby4ydfctc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-婧雪蔷薇杂记集的第一步" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/婧雪蔷薇杂记集的第一步/" class="article-date">
-  <time datetime="2017-02-22T05:25:39.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/婧雪蔷薇杂记集的第一步/">婧雪蔷薇杂记集的第一步</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   一直都想有一个属于自己的个人博客，但因为本人一直懒病缠身。直到现在，大三学年已经过半，又暂时没有考研的打算，眼看着马上就面临着找工作而自己有没有切实的做过什么项目。之前逛知乎时就一直听说用github有多么的厉害，因此就想自己做个项目然后传到github上。也是偶然在网上查找github教程时找到了利用github pages搭建个人博客的教程，于是就萌生了先自己搭建一个个人博客的想法。就在网上百度怎么搭建个人博客，很多人推荐wordpress什么的。因为自己想走javaWeb方向，就想找有没有用javaWeb来搭建的例子，不过很遗憾没找到好的教程。<br>   本来一气之下想全部自己来写的，开始自己打开dreamweaver来设计静态网页，然后又想搭建博客所要面对的文章编写、发布、存储以及前台文章列表显示、文章加载的一系列问题，又有点摇摆不定。最后想到认识的叶卡姐在学习javaWeb又有自己的个人博客，就向她是不是用javaWeb搭建的博客，最后得知她是用的github+hexo搭建的。我才最终决定用github+hexo来搭建个人博客。<br>   在这里也总结下载搭建个人博客中遇到的问题：<br>   1、在godaddy购买域名后怎么将域名和vickydan.github.io连接起来(这里参考了：一步步在GitHub上创建博客主页-最新版：<a href="http://www.pchou.info/ssgithubPage/2014-07-04-build-github-blog-page-08.html" target="_blank" rel="external">http://www.pchou.info/ssgithubPage/2014-07-04-build-github-blog-page-08.html</a>)<br>   直接在所购买域名下点击管理DNS,然后会出现一个表格<br>   2、git和Node.js的下载安装，不知道是网络还是什么的问题git一直无法从官网下载下来，因此这里我是从CSDN上下载的；Node.js直接在官网上下载安装包，感觉windows不支持通过nvm下载<br>   3、hexo安装后参考了官方教程，发现官方教程有几部分不合适：<br>      (1) 安装hexo后直接到所建文件夹下后右键单击选择git bush here后输入$ hexo init就可以了<br>      (2)写作创建新文件应该是$ hexo new “文件名”（应该为双引号而不是中括号）<br>   4、在修改_config.yml文件时需要注意：(1)参数名一定不能重复(2)参数名称后的冒号后面一定要带一个空格</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/22/婧雪蔷薇杂记集的第一步/" data-id="cizz2gfzt0006lcpb5ezvblnp" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/02/26/三级网络技术备考笔记知识点整理-3/" data-id="cj8ykddux0003fkpbyvg5mcek" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -449,6 +487,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -457,15 +499,10 @@
 
   
     
-
-  
-    
-  
-    
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
   </div>
 
@@ -473,28 +510,47 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2017/10/19/排序算法之快速排序算法/">排序算法之快速排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/14/每天几道编程题总结-1/">每天几道编程题总结(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/17/tomcat错误集锦/">tomcat错误集锦</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/08/三级网络技术备考知识点整理-7/">三级网络技术备考知识点整理(7)</a>
+          </li>
+        
+          <li>
             <a href="/2017/03/06/三级网络技术备考笔记知识点整理-6/">三级网络技术备考笔记知识点整理(6)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/02/三级网络技术备考知识点整理-5/">三级网络技术备考知识点整理(5)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/">三级网络技术备考笔记知识点整理(4)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/java相关的基础知识/">java相关的基础知识</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/27/给开学第一周做个总结/">随便说说</a>
           </li>
         
       </ul>
@@ -510,7 +566,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 婧雪蔷薇<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

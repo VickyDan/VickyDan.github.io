@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>随便说说 | 婧雪蔷薇杂记集</title>
+  <title>排序算法之快速排序算法 | 婧雪蔷薇杂记集</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
+  <meta name="description" content="#排序算法之快速排序算法（升序）
+##基本原理  运用分治的思想；取数组的第一个数为关键数，根据这个数将数组分成两个部分，使得第一部分的数全部小于等于该数，而第二部分的数全部大于等于该数；重复上面的步骤直到排序完成。
+##实现步骤待排序数组array的长度为N，令i=0,j=N-1;令key=array[0];
+
+判断array[j]是否小于key，若是，则交换array[j]与array[i]的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随便说说">
-<meta property="og:url" content="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/index.html">
+<meta property="og:title" content="排序算法之快速排序算法">
+<meta property="og:url" content="http://www.vickydan.com/2017/10/19/排序算法之快速排序算法/index.html">
 <meta property="og:site_name" content="婧雪蔷薇杂记集">
-<meta property="og:description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
-<meta property="og:updated_time" content="2017-02-27T11:55:46.505Z">
+<meta property="og:description" content="#排序算法之快速排序算法（升序）
+##基本原理  运用分治的思想；取数组的第一个数为关键数，根据这个数将数组分成两个部分，使得第一部分的数全部小于等于该数，而第二部分的数全部大于等于该数；重复上面的步骤直到排序完成。
+##实现步骤待排序数组array的长度为N，令i=0,j=N-1;令key=array[0];
+
+判断array[j]是否小于key，若是，则交换array[j]与array[i]的">
+<meta property="og:updated_time" content="2017-10-19T14:19:53.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随便说说">
-<meta name="twitter:description" content="很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。">
+<meta name="twitter:title" content="排序算法之快速排序算法">
+<meta name="twitter:description" content="#排序算法之快速排序算法（升序）
+##基本原理  运用分治的思想；取数组的第一个数为关键数，根据这个数将数组分成两个部分，使得第一部分的数全部小于等于该数，而第二部分的数全部大于等于该数；重复上面的步骤直到排序完成。
+##实现步骤待排序数组array的长度为N，令i=0,j=N-1;令key=array[0];
+
+判断array[j]是否小于key，若是，则交换array[j]与array[i]的">
   
     <link rel="alternate" href="/atom.xml" title="婧雪蔷薇杂记集" type="application/atom+xml">
   
@@ -67,10 +79,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-给开学第一周做个总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-排序算法之快速排序算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/27/给开学第一周做个总结/" class="article-date">
-  <time datetime="2017-02-27T11:41:38.000Z" itemprop="datePublished">2017-02-27</time>
+    <a href="/2017/10/19/排序算法之快速排序算法/" class="article-date">
+  <time datetime="2017-10-19T12:53:56.000Z" itemprop="datePublished">2017-10-19</time>
 </a>
     
   </div>
@@ -81,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      随便说说
+      排序算法之快速排序算法
     </h1>
   
 
@@ -89,33 +101,70 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。</p>
+        <p>#排序算法之快速排序算法（升序）</p>
+<p>##基本原理<br>  运用分治的思想；取数组的第一个数为关键数，根据这个数将数组分成两个部分，使得第一部分的数全部小于等于该数，而第二部分的数全部大于等于该数；重复上面的步骤直到排序完成。</p>
+<p>##实现步骤<br>待排序数组array的长度为N，令i=0,j=N-1;令key=array[0];</p>
+<ol>
+<li>判断array[j]是否小于key，若是，则交换array[j]与array[i]的值，否则j–,并重复步骤1;</li>
+<li>判断array[i]是否大于key，若是，则交换array[j]与array[i]的值，否则i++，并重复步骤2；</li>
+<li>判断i是否小于j，若是，则重复步骤1、2；否则，数组被分成0到i-1和i+1到N-1两个部分，并将两部分用同样的步骤进行处理，直到分成后的部分的长度小于等于1为止</li>
+</ol>
+<p>##代码实现</p>
+<pre><code>/**
+* 快速排序算法
+* &lt;p&gt;Description:对array数组中从下标为start到下标为end的部分的进行处理&lt;/p&gt; 
+* @param array 待排序数组
+* @param start 开始下标
+*@param end 结束下标
+*/
+public void QuickSort(int[] array,int start,int end){
+    if(start&gt;=end)//结束条件
+        return ;
+    int key=array[start];
+    int i=start;
+    int j=end;
+    while(i&lt;j){
 
+       while(j&gt;=0&amp;&amp;array[j]&gt;key){//从j向前查找小于key的数
+           j--;
+       }
+       if(j&gt;i){//交换array[i]与array[j]
+         int temp=array[i];
+         array[i]=array[j];
+         array[j]=temp;
+       }
+       while(i&lt;=end&amp;&amp;array[i]&lt;key){//从i开始向后查找大于key的数
+           i++;
+       }
+       if(i&lt;j){//交换array[i]与array[j]
+       int temp=array[i];
+           array[i]=array[j];
+           array[j]=temp;
+       }
+    }
+  QuickSort(array,start,i-1);//递归第一部分    
+  QuickSort(array,i+1,end);    //递归第二部分
+
+}
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cj8ykddw8000cfkpbsyynbnlu" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/10/19/排序算法之快速排序算法/" data-id="cj8ykddv00004fkpbwuxvbv1t" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2017/02/28/java相关的基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          java相关的基础知识
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/26/三级网络技术备考笔记知识点整理-3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/14/每天几道编程题总结-1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">三级网络技术备考笔记知识点整理(3)</div>
+      <div class="article-nav-title">每天几道编程题总结(1)</div>
     </a>
   
 </nav>
