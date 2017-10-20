@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.vickydan.com"></form>
@@ -94,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/10/20/每天几道编程题4/" data-id="cj8z8fn5r000bykpbtpgfc6e0" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/10/20/每天几道编程题4/" data-id="cj8z8rt0i000fe4pb3p95wxmq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +173,202 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/10/19/排序算法之快速排序算法/" data-id="cj8z8fn5k000aykpbqecy4a1n" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/10/19/排序算法之快速排序算法/" data-id="cj8z8rt05000ce4pbusilxh2o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习-算法-排序/">-学习 -算法 -排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-每天几道编程题3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/02/每天几道编程题3/" class="article-date">
+  <time datetime="2017-09-02T03:30:45.000Z" itemprop="datePublished">2017-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/02/每天几道编程题3/">每天几道编程题3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题目：表示数值的字符串<br>描述：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。<br>题目来源：《剑指Offer》(牛客网)</p>
+<p>解法一：枚举法</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    int length=str.length;
+    if(length&lt;1)
+        return false;
+    boolean point=true;
+    boolean e=true;
+    int signIn=0;
+    for(int i=0;i&lt;length;i++){
+       if(str[i]&lt;=&apos;9&apos;&amp;&amp;str[i]&gt;=&apos;0&apos;){
+           continue;
+       }
+       else if(str[i]==&apos;.&apos;&amp;&amp;point){
+           point=false;
+           continue;
+       }
+        else if((str[i]==&apos;e&apos;||str[i]==&apos;E&apos;)&amp;&amp;e&amp;&amp;i&lt;length-1){
+            e=false;
+            point=false;
+            signIn=i+1;
+            continue;
+        }
+        else if((str[i]==&apos;-&apos;||str[i]==&apos;+&apos;)&amp;&amp;(i==signIn)){
+            continue;
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}
+</code></pre><p>解法二：利用正则表达式[+-]?[0-9]*(\.[0-9]+)?([eE][+-]?[0-9]+)?</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    String string=new String(str);
+    boolean flag=string.matches(&quot;[+-]?[0-9]*(\\.[0-9]+)?([eE][+-]?[0-9]+)?&quot;);
+    return flag;
+}
+</code></pre><p>解法二：利用String与Double转换函数Double.valueOf(),捕捉其抛出的异常</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    String string=new String(str);
+    try{
+    Double.valueOf(string);
+    }catch(NumberFormatException e){
+        return false;
+    }
+    return true;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/09/02/每天几道编程题3/" data-id="cj8z8rt0a000de4pbpt16h80m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程/">-编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-排序算法之归并排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/01/排序算法之归并排序/" class="article-date">
+  <time datetime="2017-09-01T02:37:05.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/排序算法之归并排序/">排序算法之归并排序（Java）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>归并排序的基本思想：将大小为Ｎ的序列看成Ｎ个长度为１的子序列，接下来将序列两两进行兵归操作，形成［Ｎ／２］个长度为２的（或１）的有序子序列；然后再继续进行相邻子序列两两并归操作，如此循环，直到剩下１个长度为Ｎ的序列，则该序列为原序列完成排序的后的结果<br>归并操作的工作原理如下：<br>第一步：申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列<br>第二步：设定两个指针，最初位置分别为两个已经排序序列的起始位置<br>第三步：比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置<br>重复步骤3直到某一指针超出序列尾<br>将另一序列剩下的所有元素直接复制到合并序列尾<br>源代码如下：<br>    public void MergeSort(int[] array) {</p>
+<pre><code>    MSort(array, 0, array.length - 1);
+
+}
+
+public void MSort(int[] array, int start, int end) {
+    if (start &gt;= end)
+        return ;
+    int mid = start + (end - start) / 2;
+    MSort(array, start, mid);//递归排左边
+    MSort(array, mid + 1, end);//递归排右边
+    int[] copy = new int[end - start + 1];
+    int firstIn = mid;
+    int secIn = end;
+    int copyIn = end - start;
+    /*
+     *归并操作
+     */
+    while (firstIn &gt;= start &amp;&amp; secIn &gt;= mid + 1) {
+        if (array[firstIn] &gt; array[secIn]) {
+            copy[copyIn--] = array[firstIn--];
+        } else {
+            copy[copyIn--] = array[secIn--];
+        }
+    }
+    for (; firstIn &gt;= start; firstIn--) {
+        copy[copyIn--] = array[firstIn];
+    }
+    for (; secIn &gt;= mid + 1; secIn--) {
+        copy[copyIn--] = array[secIn];
+    }
+    for (int i = 0; i &lt; copy.length; i++) {
+        array[start + i] = copy[i];
+    }
+
+}
+</code></pre><p>算法应用：求逆序对，使用并归排序，在归并的过程中计算每个小区间的逆序对数，进而计算出大区间的逆序对数，源代码如下：<br>    public int InversePairs(int [] array) {<br>        int length=array.length;<br>        int count=0;<br>        if(length&lt;2)<br>           return count;<br>        count=InversePairsCore(array,0,length-1);<br>        return count;<br>    }</p>
+<pre><code>public int InversePairsCore(int []array,int start,int end){
+    if(start&gt;=end)
+        return 0;
+    int mid=start+(end-start)/2;
+    int right=InversePairsCore(array,start,mid);
+    int left=InversePairsCore(array,mid+1,end);
+
+    int[] copy=new int[end-start+1];
+    int firstIn=mid;
+    int secIn=end;
+    int copyIn=end-start;
+    int count=0;
+    while(firstIn&gt;=start&amp;&amp;secIn&gt;=mid+1){
+        if(array[firstIn]&gt;array[secIn]){
+            copy[copyIn--]=array[firstIn--];
+            count=count+secIn-mid;//逆序对的个数为左边序列中小于等于array[firstIn]的数的个数，左边序列升序排列，因此为secIn-mid
+            if(count&gt;1000000007)
+                count%=1000000007;
+        }
+        else{
+            copy[copyIn--]=array[secIn--];
+        }
+    }
+    for(;firstIn&gt;=start;firstIn--){
+        copy[copyIn--]=array[firstIn];
+    }
+    for(;secIn&gt;=mid+1;secIn--){
+        copy[copyIn--]=array[secIn];
+    }
+    for(int i=0;i&lt;copy.length;i++){
+        array[start+i]=copy[i];
+    }
+    return (right+left+count)%1000000007;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.vickydan.com/2017/09/01/排序算法之归并排序/" data-id="cj8z8rsym0008e4pb07ehygof" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习-算法-排序/">-学习 -算法 -排序</a></li></ul>
@@ -212,9 +407,11 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/08/14/每天几道编程题总结-1/" data-id="cj8z8fn6u000dykpbo0y6hkbc" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/08/14/每天几道编程题总结-1/" data-id="cj8z8rt0s000ie4pbilt3ah0s" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习-编程/">-学习 -编程</a></li></ul>
+
     </footer>
   </div>
   
@@ -248,7 +445,7 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/06/17/tomcat错误集锦/" data-id="cj8z8fn2k0001ykpbk870nv8j" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/06/17/tomcat错误集锦/" data-id="cj8z8rswa0002e4pbk4h75km8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +482,7 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/" data-id="cj8z8fn3g0003ykpbkod6sxpv" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/" data-id="cj8z8rswr0003e4pbvtjhw1f1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +519,7 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/06/三级网络技术备考笔记知识点整理-6/" data-id="cj8z8fn510008ykpbp1mgp7df" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/03/06/三级网络技术备考笔记知识点整理-6/" data-id="cj8z8rsyz0009e4pbwyvwci4y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,7 +556,7 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/02/三级网络技术备考知识点整理-5/" data-id="cj8z8fn2y0002ykpbvmvjenxs" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/03/02/三级网络技术备考知识点整理-5/" data-id="cj8z8rsvv0001e4pbuvbpaegn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,83 +593,7 @@ public void QuickSort(int[] array,int start,int end){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cj8z8fn4j0007ykpb8os6skt7" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java相关的基础知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/28/java相关的基础知识/" class="article-date">
-  <time datetime="2017-02-28T08:48:22.307Z" itemprop="datePublished">2017-02-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/28/java相关的基础知识/">java相关的基础知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于java与C++的不同：<br> 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO<br> java运行机制；虚拟机；代码安全性检测，垃圾收集机制<br>javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有main方法，必须嵌入到html文件中</p>
-<p> 关于java的工具：<br> 1、javac 编译<br> 2、java  运行<br> 3、javaw 运行图形界面程序<br> 4、appletViewer 运行applet程序<br> 5、jar 打包工具<br>    （1）编译 javac A.java<br>    （2）打包 jar cvfm A.jar A.man A.calss(c表示创建，v表示显示详情，f表示指定文件名，m表示生成清单文件，如A.man,可任意命名常见的是MANIFEST.MF)<br>    （3）运行 java -jar A.jar<br> 6、javadoc 生成文档<br>      javadoc -d 目录名 xxx.java<br> 7、javap查看类信息(javap 类名)及反汇编（java -c 类名）</p>
-<p> 关于输入输出<br>  1、文本界面：输入使用Scanner类，输出使用out(输入也可以使用in:System.in.read(),早期的JDK采用)<br>  2、图形界面输入输出：<br>      使用文本框对象（TextField）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/28/java相关的基础知识/" data-id="cj8z8fn1n0000ykpbu791lgn4" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-给开学第一周做个总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/27/给开学第一周做个总结/" class="article-date">
-  <time datetime="2017-02-27T11:41:38.000Z" itemprop="datePublished">2017-02-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/给开学第一周做个总结/">随便说说</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  很多想说又无从写起，就这样吧。本来今天是计划将三级网络技术备考笔记知识点整理（4）写出来的，不过这个计划是要移到明天了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/27/给开学第一周做个总结/" data-id="cj8z8fn72000fykpbldohzmc9" class="article-share-link">Partager</a>
+      <a data-url="http://www.vickydan.com/2017/02/28/三级网络技术备考笔记知识点整理-4/" data-id="cj8z8rsy10007e4pbwknc4562" class="article-share-link">Share</a>
       
       
     </footer>
@@ -496,9 +617,9 @@ public void QuickSort(int[] array,int start,int end){
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习-算法-排序/">-学习 -算法 -排序</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习-算法-排序/">-学习 -算法 -排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习-编程/">-学习 -编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">-编程</a></li></ul>
     </div>
   </div>
 
@@ -506,9 +627,9 @@ public void QuickSort(int[] array,int start,int end){
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/学习-算法-排序/" style="font-size: 10px;">-学习 -算法 -排序</a>
+      <a href="/tags/学习-算法-排序/" style="font-size: 20px;">-学习 -算法 -排序</a> <a href="/tags/学习-编程/" style="font-size: 10px;">-学习 -编程</a> <a href="/tags/编程/" style="font-size: 10px;">-编程</a>
     </div>
   </div>
 
@@ -517,7 +638,7 @@ public void QuickSort(int[] array,int start,int end){
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
     </div>
   </div>
 
@@ -525,7 +646,7 @@ public void QuickSort(int[] array,int start,int end){
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -538,15 +659,15 @@ public void QuickSort(int[] array,int start,int end){
           </li>
         
           <li>
+            <a href="/2017/09/02/每天几道编程题3/">每天几道编程题3</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/01/排序算法之归并排序/">排序算法之归并排序（Java）</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/14/每天几道编程题总结-1/">每天几道编程题总结(1)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/17/tomcat错误集锦/">tomcat错误集锦</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/08/三级网络技术备考知识点整理-7/">三级网络技术备考知识点整理(7)</a>
           </li>
         
       </ul>
@@ -562,7 +683,7 @@ public void QuickSort(int[] array,int start,int end){
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 婧雪蔷薇<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

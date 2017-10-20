@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>java相关的基础知识 | 婧雪蔷薇杂记集</title>
+  <title>每天几道编程题3 | 婧雪蔷薇杂记集</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于java与C++的不同： 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO java运行机制；虚拟机；代码安全性检测，垃圾收集机制javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有m">
+  <meta name="description" content="题目：表示数值的字符串描述：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。题目来源：《剑指Offer》(牛客网)
+解法一：枚举法
+public boolean isNumeric(char[] st">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java相关的基础知识">
-<meta property="og:url" content="http://www.vickydan.com/2017/02/28/java相关的基础知识/index.html">
+<meta property="og:title" content="每天几道编程题3">
+<meta property="og:url" content="http://www.vickydan.com/2017/09/02/每天几道编程题3/index.html">
 <meta property="og:site_name" content="婧雪蔷薇杂记集">
-<meta property="og:description" content="关于java与C++的不同： 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO java运行机制；虚拟机；代码安全性检测，垃圾收集机制javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有m">
-<meta property="og:updated_time" content="2017-02-28T11:35:15.538Z">
+<meta property="og:description" content="题目：表示数值的字符串描述：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。题目来源：《剑指Offer》(牛客网)
+解法一：枚举法
+public boolean isNumeric(char[] st">
+<meta property="og:updated_time" content="2017-10-20T01:46:54.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java相关的基础知识">
-<meta name="twitter:description" content="关于java与C++的不同： 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO java运行机制；虚拟机；代码安全性检测，垃圾收集机制javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有m">
+<meta name="twitter:title" content="每天几道编程题3">
+<meta name="twitter:description" content="题目：表示数值的字符串描述：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。题目来源：《剑指Offer》(牛客网)
+解法一：枚举法
+public boolean isNumeric(char[] st">
   
     <link rel="alternate" href="/atom.xml" title="婧雪蔷薇杂记集" type="application/atom+xml">
   
@@ -67,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-java相关的基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-每天几道编程题3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/28/java相关的基础知识/" class="article-date">
-  <time datetime="2017-02-28T08:48:22.307Z" itemprop="datePublished">2017-02-28</time>
+    <a href="/2017/09/02/每天几道编程题3/" class="article-date">
+  <time datetime="2017-09-02T03:30:45.000Z" itemprop="datePublished">2017-09-02</time>
 </a>
     
   </div>
@@ -81,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      java相关的基础知识
+      每天几道编程题3
     </h1>
   
 
@@ -89,35 +95,82 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于java与C++的不同：<br> 无直接指针操作；自动内存管理；数据类型长度固定；不用头文件；不包含结构和联合；不支持宏；不用多重继承；无类外全局变量；无GOTO<br> java运行机制；虚拟机；代码安全性检测，垃圾收集机制<br>javaSE应用分为Application和Applet两种，Application程序需要在jvm虚拟机上运行；Applet程序要继承JApplet，有paint()方法表示绘制没有main方法，必须嵌入到html文件中</p>
-<p> 关于java的工具：<br> 1、javac 编译<br> 2、java  运行<br> 3、javaw 运行图形界面程序<br> 4、appletViewer 运行applet程序<br> 5、jar 打包工具<br>    （1）编译 javac A.java<br>    （2）打包 jar cvfm A.jar A.man A.calss(c表示创建，v表示显示详情，f表示指定文件名，m表示生成清单文件，如A.man,可任意命名常见的是MANIFEST.MF)<br>    （3）运行 java -jar A.jar<br> 6、javadoc 生成文档<br>      javadoc -d 目录名 xxx.java<br> 7、javap查看类信息(javap 类名)及反汇编（java -c 类名）</p>
-<p> 关于输入输出<br>  1、文本界面：输入使用Scanner类，输出使用out(输入也可以使用in:System.in.read(),早期的JDK采用)<br>  2、图形界面输入输出：<br>      使用文本框对象（TextField）</p>
-
+        <p>题目：表示数值的字符串<br>描述：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。<br>题目来源：《剑指Offer》(牛客网)</p>
+<p>解法一：枚举法</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    int length=str.length;
+    if(length&lt;1)
+        return false;
+    boolean point=true;
+    boolean e=true;
+    int signIn=0;
+    for(int i=0;i&lt;length;i++){
+       if(str[i]&lt;=&apos;9&apos;&amp;&amp;str[i]&gt;=&apos;0&apos;){
+           continue;
+       }
+       else if(str[i]==&apos;.&apos;&amp;&amp;point){
+           point=false;
+           continue;
+       }
+        else if((str[i]==&apos;e&apos;||str[i]==&apos;E&apos;)&amp;&amp;e&amp;&amp;i&lt;length-1){
+            e=false;
+            point=false;
+            signIn=i+1;
+            continue;
+        }
+        else if((str[i]==&apos;-&apos;||str[i]==&apos;+&apos;)&amp;&amp;(i==signIn)){
+            continue;
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}
+</code></pre><p>解法二：利用正则表达式[+-]?[0-9]*(\.[0-9]+)?([eE][+-]?[0-9]+)?</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    String string=new String(str);
+    boolean flag=string.matches(&quot;[+-]?[0-9]*(\\.[0-9]+)?([eE][+-]?[0-9]+)?&quot;);
+    return flag;
+}
+</code></pre><p>解法二：利用String与Double转换函数Double.valueOf(),捕捉其抛出的异常</p>
+<pre><code>public boolean isNumeric(char[] str) {
+    String string=new String(str);
+    try{
+    Double.valueOf(string);
+    }catch(NumberFormatException e){
+        return false;
+    }
+    return true;
+}
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/02/28/java相关的基础知识/" data-id="cj8z8rsv30000e4pbhisn6kqn" class="article-share-link">Share</a>
+      <a data-url="http://www.vickydan.com/2017/09/02/每天几道编程题3/" data-id="cj8z8rt0a000de4pbpt16h80m" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程/">-编程</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2017/02/28/三级网络技术备考笔记知识点整理-4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/19/排序算法之快速排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          三级网络技术备考笔记知识点整理(4)
+          排序算法之快速排序算法(升序)
         
       </div>
     </a>
   
   
-    <a href="/2017/02/27/给开学第一周做个总结/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/01/排序算法之归并排序/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">随便说说</div>
+      <div class="article-nav-title">排序算法之归并排序（Java）</div>
     </a>
   
 </nav>
