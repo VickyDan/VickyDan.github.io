@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  <title>三级网络技术备考知识点整理(7) | 婧雪蔷薇杂记集</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、路由器工作原理 1、基本功能（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由 A、核心：下一跳路由器的IP地址（路由表） B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、路由器工作原理 1、基本功能（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由 A、核心：下一跳路由器的IP地址（路由表） B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三级网络技术备考知识点整理(7)">
 <meta property="og:url" content="http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/index.html">
@@ -15,212 +16,225 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三级网络技术备考知识点整理(7)">
 <meta name="twitter:description" content="一、路由器工作原理 1、基本功能（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由 A、核心：下一跳路由器的IP地址（路由表） B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权">
-  
-    <link rel="alternate" href="/atom.xml" title="婧雪蔷薇杂记集" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>三级网络技术备考知识点整理(7)</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
 </head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">婧雪蔷薇杂记集</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">努力让自己变得优秀</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.vickydan.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-三级网络技术备考知识点整理-7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/08/三级网络技术备考知识点整理-7/" class="article-date">
-  <time datetime="2017-03-08T10:25:43.000Z" itemprop="datePublished">2017-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      三级网络技术备考知识点整理(7)
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、路由器工作原理<br> 1、基本功能<br>（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由<br> A、核心：下一跳路由器的IP地址（路由表）<br> B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权值愈小，路由愈佳。然后将最佳路由信息保存在一个路由表中。当网络拓扑发生变化时，路由选择协议会重新计算最佳路由，并更新路由表<br>（2）分组转发：按照路由选择所指出的路由将数据分组从源结点转发到目的结点<br> A、实现方法：接收到一个数据分组时，查看分组头中的目的IP地址的网络部分查询路由表。如果表中给出的是到达目的网络地址的下一跳路由器的IP地址，则按路由表给出的路径将数据分组转发到下一跳路由器，由下一跳路由器继续转发，直到将数据分组转发到目的端；如果目的网络与路由器的一个端口直接相连，那么对应于目的网络地址的路由表表项给出的是目的端口，这种情况下，路由器将数据分组直接发送给目的端口；如果路由表中既没有下一跳路由地址又没有目的端口时，将数据分组转发给缺省路由，由该路由所连的路由器继续转发到目的端，如果仍没有找到该分组的网络的路由信息，则将该分组丢弃。<br> 2、路由表<br>（1）基本结构：有目的网络地址及其所对应的目的端口或下一跳路由地址和缺省路由<br>（2）管理距离：衡量路由器中给定的路由信息源的“可信度”。管理距离越小，可信度越高。<br>（3）权值：由带宽、时延、负载、跳数、可靠性、滴答数、花费等决定，权值愈小，路由愈佳<br> eg:[110/22]——&gt;该条路由信息源的管理距离为110，权值为22<br>二、路由器的结构<br> 1、CPU：Motorola68030或Orion/R4600<br> 2、内存：分类有只读内存（ROM）、随机存储器（RAM）、非易失性随机存储器（NVRAM）、<br>   闪存（Flash）<br> 3、接口<br> 4、存储器<br>三、工作模式：用户模式、特权模式、设置模式、全局配置模式、其他配置模式、RXBOOT模式（维护模式）<br>四、路由器的基本操作与配置方法<br> 1、配置方式<br>（1）使用控制端口配置<br>（2）使用AUX端口连接一台modem，通过拨号远程配置路由器<br>（3）使用telnet远程登录到路由器上配置路由器<br>（4）使用TFTP服务，以拷贝配置文件、修改配置文件的方式配置路由器<br>（5）通过网络管理协议SNMP修改路由器配置文件的方式<br> 2、使用控制端口配置：与用控制端口配置交换机基本类似<br> 3、使用telnet命令远程登录到路由器上配置路由器<br>（1）必备条件：<br> A、作为模拟终端的计算机和路由器都必须连网，它们能够相互通信<br> B、计算机必须拥有访问路由器的权限<br> C、路由器必须预先配置好远程登录密码<br>（2）配置（只需配置远程登录密码即可）<br>   全局配置模式下：<br>   Router（config）#line vty 0 15<br>   Router(config-line)#password 7 222307<br>(3)具体步骤：在“运行”窗口输入“telnet &lt;路由器IP地址&gt;”<br> 4、使用TFTP服务配置路由器<br>（1）必备条件：在网络上配置一台计算机作为TFTP服务器，TFTP服务器上必须安装并运行TFTP Server软件<br>（2）操作步骤<br> A、拷贝配置文件到TFTP服务器：特权用户模式下，write或copy命名<br> B、从TFTP服务器拷贝配置文件到路由器<br>五、路由器的基本配置及公用命令<br> 1、基本配置<br>(1)配置路由器主机名：Router（config）#hostname <name><br>(2)配置超级用户口令（密码）：<br>  Router（config）#secret <password><br>  Router(config)#password <password><br>(3)设置系统时钟：Router#calendar set hh:mm:ss <1~31> MONTH <1993~2035><br> 2、公用命令<br>（1）退出命令：exit(逐级退出)；end（直接退出到特权用户模式）<br>（2）保存配置：<br>   Router#write memory//保存到路由器NVRAM中<br>   Router#write tftp//保存到TFTP服务器<br>（3）删除配置（全部）：Router＃write erase<br>（4）网络的基本测试命令<br> A、talnet<br> B、ping<br> C、trace<br> D、show<br>六、路由器的接口配置（在全局配置模式下，通过interface &lt;接口号进入接口配置模式）<br> 1、基本配置<br>（1）配置接口描述信息：Router(config-if)#description <string>(一般描述连接到哪儿)<br>（2）配置宽带信息：Router(config-if)#bandwidth 2500000(2.5Gbps)<br>（3）配置接口的IP地址：Router(config-if)#ip address <ip地址> &lt;子网掩码&gt;<br>（4）接口的开启与关闭：shutdown(关闭)、no shutdown(接口配置模式)<br> 2、局域网接口配置<br>（1）配置标准以太网接口（Ethernet，e）<br>（2）配置快速以太网接口(FastEthernet,f)<br>（3）配置千兆以太网接口（GigabitEthernet,g）<br> 3、广域网串口配置<br>（1）配置异步串行接口（Asyns,a,主要用于连接Modem设备，为用户提供拨号上网服务）<br>（2）配置高速同步串行接口（Serial，s,主要用于DDN专线、帧中继、卫星、微波等广域网连接）（PPP或HDLC）<br>（3）配置POS接口（链路层协议PPP和HDLC）<br> 4、loopback接口的配置（虚拟接口），主要设置IP address<br>七、静态路由配置（仅适合小型的，网络拓扑没有变化的局域网和采用点到点连接的网络互连环境）<br> 方法：全局配置模式下，ip route &lt;目的网络地址&gt;&lt;子网掩码&gt;&lt;下一跳路由器的IP地址&gt;<br>   删除：no ip route<br>八、动态路由协议的配置<br> 1、RIP的配置（限制最大跳数为15，不支持可变掩码）<br>（1）基本配置<br>   Router(config)#router rip//进入RIP路由协议的配置模式<br>   Router(config-route)#network &lt;目的地址&gt;<br>（2）RIP的高级配置<br> A、配置被动接口：在RIP路由配置模式下，使用“passive-interface”指定一个路由接口为被动接口；eg:Router(config-route)#passive-interface <strong>ethernet 0</strong>//接口号<br> B、配置路由过滤（distribute-list）：在指定的路由器接口上，过滤接收/发送的路由更新信息<br>   Router(config-route)#distribute-list 12 in ethernet 0<br> C、配置管理距离（distance）(1~255)：Router（config-route）#distance 50<br> D、定义邻居路由器(neighbor)：Router(config-route)#neighbor <ip地址><br> 2、OSPF动态路由协议的配置（区域ID为0或者0.0.0.0为骨干区域）<br>（1）基本配置<br> A、进入OSPF配置模式：Router(config)#router ospf &lt;进程号&gt;<br> B、用network命令定义参与OSPF的网络地址：<br>　　Router(config-route)#network ip &lt;子网号&gt; &lt;子网掩码的反码&gt; area &lt;区域号&gt;<br> C、定义某一特定范围子网的聚合：Router(config-route)#area &lt;区域号&gt; range &lt;子网地址&gt; &lt;子网掩码&gt;<br>（2）几个常用OSPF参数的配置<br> A、配置被动接口：passive-interface<br> B、配置路由过滤：distribute-list<br> C、配置管理距离：distance(默认为110)<br> D、配置引入外部路由到OSPF的参数<br>  a、引入外部路由的花费值：redistribute metric<br>  b、引入外部路由时缺省的标记：redistribute tag<br>  c、引入外部路由时缺省的外部路由类型：<br>  类型2：redistribute connected metric-type<br>九、路由器的DHCP功能及其配置<br> 1、动态地址分配：使用动态主机配置协议(DHCP)，由网络站点提出DHCP请求，从DHCP服务器上自动获取一个IP地址与缺省网关、域名、域名服务器等相关的TCP/IP属性的信息。在网络站点退出登录后，就将地址自动释放（动态分配的IP地址是一个临时的、不固定的地址）<br> 2、DHCP的工作原理<br> 采用客户机/服务器（C/S）工作模式<br> DHCP服务器的两个功能：（1）建立和分配IP地址池；(2)接收并处理DHCP客户端提出的DHCP请求（分配一个可用的IP地址，并将相应的信息反馈给客户。客户端系统关闭后自动收回IP地址）<br> DHCP客户端的功能：提交DHCP请求，请求DHCP服务器给它分配一个IP地址并接收和使用DHCP临时配给它的IP地址进行网络连接<br> DHCP协议允许网络上配置多台DHCP服务器。当DHCP客户端收到多个应答信息时，通常会挑选最先到达的信息；同时DHCP客户与它选中的DHCP服务器获取IP地址及其他的TCP／IP属性信息。<br> DHCP协议允许使用备份DHCP服务器的功能<br> 3、DHCP客户端从DHCP服务器申请一个IP地址的基本操作步骤：<br>  主机A       DHCPDISCOVER(boradcast）       DHCP Server<br>              DHCPOFFER(unicast)<br>              DHCPREQUEST(boradcast)<br>              DHCPACK(unicast)<br> 4、路由器作为DHCP服务器的配置<br>（1）配置IP地址池的名称，并进入DHCP　Pool配置模式<br>　　　Router(config)#ip dhcp pool <name><br>（2）配置IP地址的IP子网地址和子网掩码：<br>   Router(dhcp-config)#&lt;网络号&gt;[子网掩码]<br>   配置不参与动态分配的IP地址（除外地）<br>   Router(dhcp-config)#ip dhcp excluded-address low-address[high-address]<br>（3）配置IP地址池的缺省网关（网关地址最多可配置8个，但一般只需配一个）<br>   Router(dhcp-config)#default-router address[address1 … address7]<br>（4）配置IP地址池的域名系统（用于为DHCP客户指定一个域名和域名服务器）<br> A、配置IP地址池的域名：Router(dhcp-config)#domain-name <name><br> B、配置IP地址池的域名服务器的IP地址：<br>  Router(dhcp-config)#dns-server address[address1 … address7]<br>（5）配置IP地址池的地址租用时间（缺省为１天）<br>　Router(dhcp-config)#lease {days [hours] [munites]|infinite}//infinite为无限时间<br>（6）取消地址冲突记录日志<br>  Router(dhcp-config)#no ip dhcp onflict logging<br>十、路由器IP访问控制列表的功能及其配置<br> 1、访问控制列表：用于提供初级防火墙功能；告诉路由器哪些数据包可以接受，哪些需要拒绝；是一系列有网络管理员预先配置好的，允许和拒绝匹配规则的集合；其核心是根据特定规则进行数据包过滤，对网络进行安全控制，防止病毒包、扫描包、攻击包等通过路由器去攻击网络，保证网络的安全性<br> 2、IP访问控制列表功能简介<br>（1）主要功能：包过滤<br>（2）过滤准则：基于源地址、目的地址、各种协议和端口号的过滤准则<br>（3）分类：<br> A、标准访问控制列表：只能检查数据包的源地址，根据源网络、子网络或主机IP地址来决定对包的过滤；表号为1~99，扩展表号1300~1999<br> B、扩展访问控制列表：可以检查数据包的源地址、目的地址、指定的协议和端口号来对数据包进行过滤；表号为100~199，扩展表号2000~2699<br> 3、配置IP访问控制列表：一个连续列表，至少由一个“permit”和一个或多个“deny”语句组成；可以用名字或表号来标识和引用<br> （1）用access-list命令配置访问控制列表<br>  A、配置标准访问控制列表<br>  Router(config)#access-list <number> {permit|deny} &lt;源地址&gt; &lt;子网掩码的反码&gt;<br>  B、配置扩展访问控制列表<br>  Router(config)#access-list <number> {permit|deny} protocal source wildcard-mask destination wildcard-mask [operator] [operand]//operatar:操作符，“lt”(小于)，”gt”(大于)，”eq”(等于)，”neq”(不等于);operand:端口号<br>（2）ip access-list命令配置访问控制列表（配置标准和扩展的方法基本相同）<br>  A、进入标准(扩展)访问控制模式：<br>  Router(config)#ip access-list standard(extended) number(name)<br> B、标准(扩展)访问控制模式下：<br>  permit(deny) protocal source wildcard-mask distination wildcard-mask [operator][opercand]</number></number></name></name></ip地址></ip地址></string></1993~2035></1~31></password></password></name></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/" data-id="cj8z8rswr0003e4pbvtjhw1f1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/06/17/tomcat错误集锦/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          tomcat错误集锦
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/06/三级网络技术备考笔记知识点整理-6/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">三级网络技术备考笔记知识点整理(6)</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习-算法-排序/">-学习 -算法 -排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习-编程/">-学习 -编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程/">-编程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/学习-算法-排序/" style="font-size: 20px;">-学习 -算法 -排序</a> <a href="/tags/学习-编程/" style="font-size: 10px;">-学习 -编程</a> <a href="/tags/编程/" style="font-size: 10px;">-编程</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
       <ul>
         
-          <li>
-            <a href="/2017/10/20/每天几道编程题4/">每天几道编程题4</a>
-          </li>
+        <li><a class="icon" href="/2017/04/10/JBlog开发日志/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-          <li>
-            <a href="/2017/10/19/排序算法之快速排序算法/">排序算法之快速排序算法(升序)</a>
-          </li>
         
-          <li>
-            <a href="/2017/09/02/每天几道编程题3/">每天几道编程题3</a>
-          </li>
+        <li><a class="icon" href="/2017/03/06/三级网络技术备考笔记知识点整理-6/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-          <li>
-            <a href="/2017/09/01/排序算法之归并排序/">排序算法之归并排序（Java）</a>
-          </li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&text=三级网络技术备考知识点整理(7)"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&is_video=false&description=三级网络技术备考知识点整理(7)"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=三级网络技术备考知识点整理(7)&body=Check out this article: http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&name=三级网络技术备考知识点整理(7)&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
         
-          <li>
-            <a href="/2017/08/14/每天几道编程题总结-1/">每天几道编程题总结(1)</a>
-          </li>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        三级网络技术备考知识点整理(7)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">婧雪蔷薇杂记集</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-03-08T10:25:43.000Z" itemprop="datePublished">2017-03-08</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>一、路由器工作原理<br> 1、基本功能<br>（1）路由选择：依据目的IP地址的网络地址，通过路由选择算法确定一条从源结点到目的结点的最佳路由<br> A、核心：下一跳路由器的IP地址（路由表）<br> B、实现方法：使用路由选择算法，根据实际网络连接情况和网络性能，建立网络拓扑结构图，以建立路由选择和转发的基础。同时路由选择算法根据各自的判断原则（带宽、时延、负载、路由器跳数等因素），为网络上的路由产生一个权值。一般来说，权值愈小，路由愈佳。然后将最佳路由信息保存在一个路由表中。当网络拓扑发生变化时，路由选择协议会重新计算最佳路由，并更新路由表<br>（2）分组转发：按照路由选择所指出的路由将数据分组从源结点转发到目的结点<br> A、实现方法：接收到一个数据分组时，查看分组头中的目的IP地址的网络部分查询路由表。如果表中给出的是到达目的网络地址的下一跳路由器的IP地址，则按路由表给出的路径将数据分组转发到下一跳路由器，由下一跳路由器继续转发，直到将数据分组转发到目的端；如果目的网络与路由器的一个端口直接相连，那么对应于目的网络地址的路由表表项给出的是目的端口，这种情况下，路由器将数据分组直接发送给目的端口；如果路由表中既没有下一跳路由地址又没有目的端口时，将数据分组转发给缺省路由，由该路由所连的路由器继续转发到目的端，如果仍没有找到该分组的网络的路由信息，则将该分组丢弃。<br> 2、路由表<br>（1）基本结构：有目的网络地址及其所对应的目的端口或下一跳路由地址和缺省路由<br>（2）管理距离：衡量路由器中给定的路由信息源的“可信度”。管理距离越小，可信度越高。<br>（3）权值：由带宽、时延、负载、跳数、可靠性、滴答数、花费等决定，权值愈小，路由愈佳<br> eg:[110/22]——&gt;该条路由信息源的管理距离为110，权值为22<br>二、路由器的结构<br> 1、CPU：Motorola68030或Orion/R4600<br> 2、内存：分类有只读内存（ROM）、随机存储器（RAM）、非易失性随机存储器（NVRAM）、<br>   闪存（Flash）<br> 3、接口<br> 4、存储器<br>三、工作模式：用户模式、特权模式、设置模式、全局配置模式、其他配置模式、RXBOOT模式（维护模式）<br>四、路由器的基本操作与配置方法<br> 1、配置方式<br>（1）使用控制端口配置<br>（2）使用AUX端口连接一台modem，通过拨号远程配置路由器<br>（3）使用telnet远程登录到路由器上配置路由器<br>（4）使用TFTP服务，以拷贝配置文件、修改配置文件的方式配置路由器<br>（5）通过网络管理协议SNMP修改路由器配置文件的方式<br> 2、使用控制端口配置：与用控制端口配置交换机基本类似<br> 3、使用telnet命令远程登录到路由器上配置路由器<br>（1）必备条件：<br> A、作为模拟终端的计算机和路由器都必须连网，它们能够相互通信<br> B、计算机必须拥有访问路由器的权限<br> C、路由器必须预先配置好远程登录密码<br>（2）配置（只需配置远程登录密码即可）<br>   全局配置模式下：<br>   Router（config）#line vty 0 15<br>   Router(config-line)#password 7 222307<br>(3)具体步骤：在“运行”窗口输入“telnet &lt;路由器IP地址&gt;”<br> 4、使用TFTP服务配置路由器<br>（1）必备条件：在网络上配置一台计算机作为TFTP服务器，TFTP服务器上必须安装并运行TFTP Server软件<br>（2）操作步骤<br> A、拷贝配置文件到TFTP服务器：特权用户模式下，write或copy命名<br> B、从TFTP服务器拷贝配置文件到路由器<br>五、路由器的基本配置及公用命令<br> 1、基本配置<br>(1)配置路由器主机名：Router（config）#hostname <name><br>(2)配置超级用户口令（密码）：<br>  Router（config）#secret <password><br>  Router(config)#password <password><br>(3)设置系统时钟：Router#calendar set hh:mm:ss <1~31> MONTH <1993~2035><br> 2、公用命令<br>（1）退出命令：exit(逐级退出)；end（直接退出到特权用户模式）<br>（2）保存配置：<br>   Router#write memory//保存到路由器NVRAM中<br>   Router#write tftp//保存到TFTP服务器<br>（3）删除配置（全部）：Router＃write erase<br>（4）网络的基本测试命令<br> A、talnet<br> B、ping<br> C、trace<br> D、show<br>六、路由器的接口配置（在全局配置模式下，通过interface &lt;接口号进入接口配置模式）<br> 1、基本配置<br>（1）配置接口描述信息：Router(config-if)#description <string>(一般描述连接到哪儿)<br>（2）配置宽带信息：Router(config-if)#bandwidth 2500000(2.5Gbps)<br>（3）配置接口的IP地址：Router(config-if)#ip address <ip地址> &lt;子网掩码&gt;<br>（4）接口的开启与关闭：shutdown(关闭)、no shutdown(接口配置模式)<br> 2、局域网接口配置<br>（1）配置标准以太网接口（Ethernet，e）<br>（2）配置快速以太网接口(FastEthernet,f)<br>（3）配置千兆以太网接口（GigabitEthernet,g）<br> 3、广域网串口配置<br>（1）配置异步串行接口（Asyns,a,主要用于连接Modem设备，为用户提供拨号上网服务）<br>（2）配置高速同步串行接口（Serial，s,主要用于DDN专线、帧中继、卫星、微波等广域网连接）（PPP或HDLC）<br>（3）配置POS接口（链路层协议PPP和HDLC）<br> 4、loopback接口的配置（虚拟接口），主要设置IP address<br>七、静态路由配置（仅适合小型的，网络拓扑没有变化的局域网和采用点到点连接的网络互连环境）<br> 方法：全局配置模式下，ip route &lt;目的网络地址&gt;&lt;子网掩码&gt;&lt;下一跳路由器的IP地址&gt;<br>   删除：no ip route<br>八、动态路由协议的配置<br> 1、RIP的配置（限制最大跳数为15，不支持可变掩码）<br>（1）基本配置<br>   Router(config)#router rip//进入RIP路由协议的配置模式<br>   Router(config-route)#network &lt;目的地址&gt;<br>（2）RIP的高级配置<br> A、配置被动接口：在RIP路由配置模式下，使用“passive-interface”指定一个路由接口为被动接口；eg:Router(config-route)#passive-interface <strong>ethernet 0</strong>//接口号<br> B、配置路由过滤（distribute-list）：在指定的路由器接口上，过滤接收/发送的路由更新信息<br>   Router(config-route)#distribute-list 12 in ethernet 0<br> C、配置管理距离（distance）(1~255)：Router（config-route）#distance 50<br> D、定义邻居路由器(neighbor)：Router(config-route)#neighbor <ip地址><br> 2、OSPF动态路由协议的配置（区域ID为0或者0.0.0.0为骨干区域）<br>（1）基本配置<br> A、进入OSPF配置模式：Router(config)#router ospf &lt;进程号&gt;<br> B、用network命令定义参与OSPF的网络地址：<br>　　Router(config-route)#network ip &lt;子网号&gt; &lt;子网掩码的反码&gt; area &lt;区域号&gt;<br> C、定义某一特定范围子网的聚合：Router(config-route)#area &lt;区域号&gt; range &lt;子网地址&gt; &lt;子网掩码&gt;<br>（2）几个常用OSPF参数的配置<br> A、配置被动接口：passive-interface<br> B、配置路由过滤：distribute-list<br> C、配置管理距离：distance(默认为110)<br> D、配置引入外部路由到OSPF的参数<br>  a、引入外部路由的花费值：redistribute metric<br>  b、引入外部路由时缺省的标记：redistribute tag<br>  c、引入外部路由时缺省的外部路由类型：<br>  类型2：redistribute connected metric-type<br>九、路由器的DHCP功能及其配置<br> 1、动态地址分配：使用动态主机配置协议(DHCP)，由网络站点提出DHCP请求，从DHCP服务器上自动获取一个IP地址与缺省网关、域名、域名服务器等相关的TCP/IP属性的信息。在网络站点退出登录后，就将地址自动释放（动态分配的IP地址是一个临时的、不固定的地址）<br> 2、DHCP的工作原理<br> 采用客户机/服务器（C/S）工作模式<br> DHCP服务器的两个功能：（1）建立和分配IP地址池；(2)接收并处理DHCP客户端提出的DHCP请求（分配一个可用的IP地址，并将相应的信息反馈给客户。客户端系统关闭后自动收回IP地址）<br> DHCP客户端的功能：提交DHCP请求，请求DHCP服务器给它分配一个IP地址并接收和使用DHCP临时配给它的IP地址进行网络连接<br> DHCP协议允许网络上配置多台DHCP服务器。当DHCP客户端收到多个应答信息时，通常会挑选最先到达的信息；同时DHCP客户与它选中的DHCP服务器获取IP地址及其他的TCP／IP属性信息。<br> DHCP协议允许使用备份DHCP服务器的功能<br> 3、DHCP客户端从DHCP服务器申请一个IP地址的基本操作步骤：<br>  主机A       DHCPDISCOVER(boradcast）       DHCP Server<br>              DHCPOFFER(unicast)<br>              DHCPREQUEST(boradcast)<br>              DHCPACK(unicast)<br> 4、路由器作为DHCP服务器的配置<br>（1）配置IP地址池的名称，并进入DHCP　Pool配置模式<br>　　　Router(config)#ip dhcp pool <name><br>（2）配置IP地址的IP子网地址和子网掩码：<br>   Router(dhcp-config)#&lt;网络号&gt;[子网掩码]<br>   配置不参与动态分配的IP地址（除外地）<br>   Router(dhcp-config)#ip dhcp excluded-address low-address[high-address]<br>（3）配置IP地址池的缺省网关（网关地址最多可配置8个，但一般只需配一个）<br>   Router(dhcp-config)#default-router address[address1 … address7]<br>（4）配置IP地址池的域名系统（用于为DHCP客户指定一个域名和域名服务器）<br> A、配置IP地址池的域名：Router(dhcp-config)#domain-name <name><br> B、配置IP地址池的域名服务器的IP地址：<br>  Router(dhcp-config)#dns-server address[address1 … address7]<br>（5）配置IP地址池的地址租用时间（缺省为１天）<br>　Router(dhcp-config)#lease {days [hours] [munites]|infinite}//infinite为无限时间<br>（6）取消地址冲突记录日志<br>  Router(dhcp-config)#no ip dhcp onflict logging<br>十、路由器IP访问控制列表的功能及其配置<br> 1、访问控制列表：用于提供初级防火墙功能；告诉路由器哪些数据包可以接受，哪些需要拒绝；是一系列有网络管理员预先配置好的，允许和拒绝匹配规则的集合；其核心是根据特定规则进行数据包过滤，对网络进行安全控制，防止病毒包、扫描包、攻击包等通过路由器去攻击网络，保证网络的安全性<br> 2、IP访问控制列表功能简介<br>（1）主要功能：包过滤<br>（2）过滤准则：基于源地址、目的地址、各种协议和端口号的过滤准则<br>（3）分类：<br> A、标准访问控制列表：只能检查数据包的源地址，根据源网络、子网络或主机IP地址来决定对包的过滤；表号为1~99，扩展表号1300~1999<br> B、扩展访问控制列表：可以检查数据包的源地址、目的地址、指定的协议和端口号来对数据包进行过滤；表号为100~199，扩展表号2000~2699<br> 3、配置IP访问控制列表：一个连续列表，至少由一个“permit”和一个或多个“deny”语句组成；可以用名字或表号来标识和引用<br> （1）用access-list命令配置访问控制列表<br>  A、配置标准访问控制列表<br>  Router(config)#access-list <number> {permit|deny} &lt;源地址&gt; &lt;子网掩码的反码&gt;<br>  B、配置扩展访问控制列表<br>  Router(config)#access-list <number> {permit|deny} protocal source wildcard-mask destination wildcard-mask [operator] [operand]//operatar:操作符，“lt”(小于)，”gt”(大于)，”eq”(等于)，”neq”(不等于);operand:端口号<br>（2）ip access-list命令配置访问控制列表（配置标准和扩展的方法基本相同）<br>  A、进入标准(扩展)访问控制模式：<br>  Router(config)#ip access-list standard(extended) number(name)<br> B、标准(扩展)访问控制模式下：<br>  permit(deny) protocal source wildcard-mask distination wildcard-mask [operator][opercand]</number></number></name></name></ip地址></ip地址></string></1993~2035></1~31></password></password></name></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
         
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 婧雪蔷薇<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div id="toc-footer" style="display: none">
+      
     </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&text=三级网络技术备考知识点整理(7)"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&is_video=false&description=三级网络技术备考知识点整理(7)"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=三级网络技术备考知识点整理(7)&body=Check out this article: http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&title=三级网络技术备考知识点整理(7)"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.vickydan.com/2017/03/08/三级网络技术备考知识点整理-7/&name=三级网络技术备考知识点整理(7)&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 婧雪蔷薇
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
